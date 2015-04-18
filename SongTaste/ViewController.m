@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()
 
@@ -15,8 +16,10 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [super viewDidLoNad];
+    // Do any additional setup after loading the view, typically from a nib
+    AVPlayer
+    
 }
 
 - (void)didReceiveMemoryWarning {
