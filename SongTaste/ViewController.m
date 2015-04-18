@@ -17,9 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoNad];
-    // Do any additional setup after loading the view, typically from a nib
-    AVPlayer
-    
+    // Do any additional setup after loading the view, typically from a nib    
 }
 
 - (void)didReceiveMemoryWarning {

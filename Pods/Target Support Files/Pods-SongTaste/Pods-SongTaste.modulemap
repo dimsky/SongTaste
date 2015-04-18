@@ -1,0 +1,6 @@
+framework module Pods_SongTaste {
+  umbrella header "Pods-SongTaste-umbrella.h"
+
+  export *
+  module * { export * }
+}
