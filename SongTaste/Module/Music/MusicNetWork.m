@@ -58,7 +58,7 @@
 - (void)recommendMusicListWithCount:(int)count success:(void(^)(NSArray *result))successBlock failed:(void(^)(NSError *error))failedBlock {
     NSDictionary *param = @{@"p": @"1", @"n": @(count), @"tmp": @"0.819292892893892", @"callback": @" "};
     AFHTTPRequestOperationManager *manager =  [AFHTTPRequestOperationManager manager];
-    //    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [manager GET:@"http://songtaste.com/api/android/rec_list.php" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSMutableArray *array = [NSMutableArray new];
@@ -73,6 +73,26 @@
         failedBlock(error);
     }];
 
+}
+
+
+- (void)musicURLWithId:(int)musicId success:(void(^)(MusicModel *music))successBlock failed:(void(^)(NSError *error))failedBlock {
+    NSDictionary *param = @{@"songid": @(musicId)};
+    AFHTTPRequestOperationManager *manager =  [AFHTTPRequestOperationManager manager];
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [manager GET:@"http://songtaste.com/api/android/songurl.php" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSMutableArray *array = [NSMutableArray new];
+        for (id obj in responseObject[@"data"]) {
+            MusicModel *musicModel = [[MusicModel alloc] initWithString:[obj JSONString] error:nil] ;
+            [array addObject:musicModel];
+        }
+        
+        successBlock(array);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failedBlock(error);
+    }];
 }
 
 @end

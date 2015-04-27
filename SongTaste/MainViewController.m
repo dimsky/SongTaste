@@ -16,6 +16,7 @@
 #import "NSString+JSONCategories.h"
 #import "NSObject+JSONCategories.h"
 #import "MusicNetWork.h"
+#import "NCMusicEngine.h"
 
 // http://songtaste.com/api/android/rec_list.php?p=1&n=20&tmp=0.8110623725224286&callback=dm.st.fmNew
 static NSString *get_music_url = @"http://songtaste.com/api/android/rec_list.php";
@@ -27,6 +28,8 @@ static NSString *get_music_url = @"http://songtaste.com/api/android/rec_list.php
 @property (nonatomic, strong)UITableView *mainTableView;
 
 @property (nonatomic, strong)NSArray *musicArray;
+
+@property (nonatomic, strong)NCMusicEngine *musicEngine;
 @end
 
 @implementation MainViewController
@@ -86,6 +89,8 @@ static NSString *get_music_url = @"http://songtaste.com/api/android/rec_list.php
 
 - (void)initData{
 
+    _musicEngine = [[NCMusicEngine alloc] initWithSetBackgroundPlaying:YES];
+    
     [[MusicNetWork sharedInstance] recommendMusicListWithCount:20 success:^(NSArray *result) {
         NSLog(@"%@", result);
         _musicArray = result;
@@ -164,6 +169,14 @@ static NSString *get_music_url = @"http://songtaste.com/api/android/rec_list.php
 }
 
 #pragma mark UITableViewDelegate 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    MusicModel *model = _musicArray[indexPath.row];
+    
+    [[MusicNetWork sharedInstance] musicURLWithId:model.ID success:^(MusicModel *music) {
+        
+    } failed:^(NSError *error) {
+        
+    }];
+}
 
 @end

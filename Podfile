@@ -8,5 +8,6 @@ target 'SongTaste' do
   pod "PureLayout"
   pod "JSONModel"
   pod "MJRefresh"
+  pod "Ono"
 end
 

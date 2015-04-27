@@ -24,6 +24,9 @@
 		3D5F34761AE21A320019103B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D5F34741AE21A320019103B /* LaunchScreen.xib */; };
 		3D5F34821AE21A320019103B /* SongTasteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F34811AE21A320019103B /* SongTasteTests.m */; };
 		3D5F348C1AE228D60019103B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5F348B1AE228D60019103B /* AVFoundation.framework */; };
+		ABD439681AEE783E00A9AEA0 /* NCMusicEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD439671AEE783E00A9AEA0 /* NCMusicEngine.m */; };
+		ABD4396B1AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD4396A1AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.m */; };
+		ABD4396D1AEE8C8200A9AEA0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD4396C1AEE8C8200A9AEA0 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,11 @@
 		3D5F34811AE21A320019103B /* SongTasteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongTasteTests.m; sourceTree = "<group>"; };
 		3D5F348B1AE228D60019103B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		75A6A71D88EB63C97B721744 /* Pods-SongTaste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongTaste.release.xcconfig"; path = "Pods/Target Support Files/Pods-SongTaste/Pods-SongTaste.release.xcconfig"; sourceTree = "<group>"; };
+		ABD439661AEE783E00A9AEA0 /* NCMusicEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCMusicEngine.h; sourceTree = "<group>"; };
+		ABD439671AEE783E00A9AEA0 /* NCMusicEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCMusicEngine.m; sourceTree = "<group>"; };
+		ABD439691AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDownloadRequestOperation.h; sourceTree = "<group>"; };
+		ABD4396A1AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFDownloadRequestOperation.m; sourceTree = "<group>"; };
+		ABD4396C1AEE8C8200A9AEA0 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BDF4E0D8C978A74661A693F1 /* Pods-SongTaste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongTaste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SongTaste/Pods-SongTaste.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD4396D1AEE8C8200A9AEA0 /* libxml2.dylib in Frameworks */,
 				3D5F348C1AE228D60019103B /* AVFoundation.framework in Frameworks */,
 				18E744AC145DB7BEC5A1F225 /* Pods_SongTaste.framework in Frameworks */,
 			);
@@ -96,6 +105,7 @@
 		259C41AB1C54EB5E72C16904 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ABD4396C1AEE8C8200A9AEA0 /* libxml2.dylib */,
 				3D5F348B1AE228D60019103B /* AVFoundation.framework */,
 				0465727313359026480B4D92 /* Pods_SongTaste.framework */,
 			);
@@ -248,6 +258,7 @@
 		3D5F34641AE21A320019103B /* SongTaste */ = {
 			isa = PBXGroup;
 			children = (
+				ABD439651AEE777900A9AEA0 /* Lib */,
 				3D1DF8501AECBAB50050CECF /* Module */,
 				3D1DF84A1AECB19E0050CECF /* Base */,
 				3D5F34691AE21A320019103B /* AppDelegate.h */,
@@ -296,6 +307,17 @@
 				75A6A71D88EB63C97B721744 /* Pods-SongTaste.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		ABD439651AEE777900A9AEA0 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				ABD439691AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.h */,
+				ABD4396A1AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.m */,
+				ABD439661AEE783E00A9AEA0 /* NCMusicEngine.h */,
+				ABD439671AEE783E00A9AEA0 /* NCMusicEngine.m */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD4396B1AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.m in Sources */,
 				3D5F346E1AE21A320019103B /* MainViewController.m in Sources */,
 				3D1DF8601AEE1A3F0050CECF /* MusicModel.m in Sources */,
 				3D5F346B1AE21A320019103B /* AppDelegate.m in Sources */,
@@ -459,6 +482,7 @@
 				3D1DF86D1AEE30190050CECF /* MusicNetWork.m in Sources */,
 				3D1DF85D1AEE18B60050CECF /* STModel.m in Sources */,
 				3D1DF8571AECBE120050CECF /* STPlayBarView.m in Sources */,
+				ABD439681AEE783E00A9AEA0 /* NCMusicEngine.m in Sources */,
 				3D1DF8681AEE21DE0050CECF /* NSString+JSONCategories.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
