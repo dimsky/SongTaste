@@ -8,9 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		18E744AC145DB7BEC5A1F225 /* Pods_SongTaste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0465727313359026480B4D92 /* Pods_SongTaste.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3D1DF8571AECBE120050CECF /* STPlayBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF8561AECBE120050CECF /* STPlayBarView.m */; };
+		3D1DF85D1AEE18B60050CECF /* STModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF85C1AEE18B60050CECF /* STModel.m */; };
+		3D1DF8601AEE1A3F0050CECF /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF85F1AEE1A3F0050CECF /* MusicModel.m */; };
+		3D1DF8651AEE209F0050CECF /* NSObject+JSONCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF8641AEE209F0050CECF /* NSObject+JSONCategories.m */; };
+		3D1DF8681AEE21DE0050CECF /* NSString+JSONCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF8671AEE21DE0050CECF /* NSString+JSONCategories.m */; };
+		3D1DF86D1AEE30190050CECF /* MusicNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF86C1AEE30190050CECF /* MusicNetWork.m */; };
+		3D1DF8711AEE3EDC0050CECF /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF86F1AEE3EDC0050CECF /* MainTableViewCell.m */; };
+		3D1DF8721AEE3EDC0050CECF /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1DF8701AEE3EDC0050CECF /* MainTableViewCell.xib */; };
 		3D5F34681AE21A320019103B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F34671AE21A320019103B /* main.m */; };
 		3D5F346B1AE21A320019103B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F346A1AE21A320019103B /* AppDelegate.m */; };
-		3D5F346E1AE21A320019103B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F346D1AE21A320019103B /* ViewController.m */; };
+		3D5F346E1AE21A320019103B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F346D1AE21A320019103B /* MainViewController.m */; };
 		3D5F34711AE21A320019103B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5F346F1AE21A320019103B /* Main.storyboard */; };
 		3D5F34731AE21A320019103B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D5F34721AE21A320019103B /* Images.xcassets */; };
 		3D5F34761AE21A320019103B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D5F34741AE21A320019103B /* LaunchScreen.xib */; };
@@ -30,13 +38,30 @@
 
 /* Begin PBXFileReference section */
 		0465727313359026480B4D92 /* Pods_SongTaste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SongTaste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1DF8551AECBE120050CECF /* STPlayBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPlayBarView.h; sourceTree = "<group>"; };
+		3D1DF8561AECBE120050CECF /* STPlayBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPlayBarView.m; sourceTree = "<group>"; };
+		3D1DF8591AECC5BE0050CECF /* SongTaste-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SongTaste-Prefix.pch"; sourceTree = "<group>"; };
+		3D1DF85A1AECC6820050CECF /* GeneralClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralClass.h; sourceTree = "<group>"; };
+		3D1DF85B1AEE18B60050CECF /* STModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STModel.h; sourceTree = "<group>"; };
+		3D1DF85C1AEE18B60050CECF /* STModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STModel.m; sourceTree = "<group>"; };
+		3D1DF85E1AEE1A3F0050CECF /* MusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicModel.h; path = Module/Music/MusicModel.h; sourceTree = "<group>"; };
+		3D1DF85F1AEE1A3F0050CECF /* MusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicModel.m; path = Module/Music/MusicModel.m; sourceTree = "<group>"; };
+		3D1DF8631AEE209F0050CECF /* NSObject+JSONCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSONCategories.h"; sourceTree = "<group>"; };
+		3D1DF8641AEE209F0050CECF /* NSObject+JSONCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSONCategories.m"; sourceTree = "<group>"; };
+		3D1DF8661AEE21DE0050CECF /* NSString+JSONCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JSONCategories.h"; sourceTree = "<group>"; };
+		3D1DF8671AEE21DE0050CECF /* NSString+JSONCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JSONCategories.m"; sourceTree = "<group>"; };
+		3D1DF86B1AEE30190050CECF /* MusicNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicNetWork.h; path = Module/Music/MusicNetWork.h; sourceTree = "<group>"; };
+		3D1DF86C1AEE30190050CECF /* MusicNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicNetWork.m; path = Module/Music/MusicNetWork.m; sourceTree = "<group>"; };
+		3D1DF86E1AEE3EDC0050CECF /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTableViewCell.h; path = Module/Music/MainTableViewCell.h; sourceTree = "<group>"; };
+		3D1DF86F1AEE3EDC0050CECF /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTableViewCell.m; path = Module/Music/MainTableViewCell.m; sourceTree = "<group>"; };
+		3D1DF8701AEE3EDC0050CECF /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainTableViewCell.xib; path = Module/Music/MainTableViewCell.xib; sourceTree = "<group>"; };
 		3D5F34621AE21A320019103B /* SongTaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongTaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5F34661AE21A320019103B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D5F34671AE21A320019103B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3D5F34691AE21A320019103B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D5F346A1AE21A320019103B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3D5F346C1AE21A320019103B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3D5F346D1AE21A320019103B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3D5F346C1AE21A320019103B /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		3D5F346D1AE21A320019103B /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3D5F34701AE21A320019103B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D5F34721AE21A320019103B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3D5F34751AE21A320019103B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -71,15 +96,138 @@
 		259C41AB1C54EB5E72C16904 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D5F348B1AE228D60019103B /* AVFoundation.framework */,
 				0465727313359026480B4D92 /* Pods_SongTaste.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3D1DF8441AECAEC20050CECF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D1DF85E1AEE1A3F0050CECF /* MusicModel.h */,
+				3D1DF85F1AEE1A3F0050CECF /* MusicModel.m */,
+			);
+			name = Model;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		3D1DF8461AECAF020050CECF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D1DF86E1AEE3EDC0050CECF /* MainTableViewCell.h */,
+				3D1DF86F1AEE3EDC0050CECF /* MainTableViewCell.m */,
+				3D1DF8701AEE3EDC0050CECF /* MainTableViewCell.xib */,
+			);
+			name = View;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		3D1DF8471AECAF0A0050CECF /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				3D1DF86B1AEE30190050CECF /* MusicNetWork.h */,
+				3D1DF86C1AEE30190050CECF /* MusicNetWork.m */,
+			);
+			name = NetWork;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		3D1DF8481AECAF110050CECF /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = API;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		3D1DF84A1AECB19E0050CECF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3D1DF8621AEE204E0050CECF /* Categories */,
+				3D1DF8611AEE20420050CECF /* Model */,
+				3D1DF8541AECBDC10050CECF /* View */,
+				3D1DF85A1AECC6820050CECF /* GeneralClass.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3D1DF84C1AECB1BC0050CECF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		3D1DF8501AECBAB50050CECF /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				3D1DF8511AECBAB50050CECF /* Music */,
+				3D1DF8521AECBAB50050CECF /* My */,
+				3D1DF8531AECBAB50050CECF /* setting */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		3D1DF8511AECBAB50050CECF /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				3D1DF84C1AECB1BC0050CECF /* Controller */,
+				3D1DF8441AECAEC20050CECF /* Model */,
+				3D1DF8461AECAF020050CECF /* View */,
+				3D1DF8471AECAF0A0050CECF /* NetWork */,
+				3D1DF8481AECAF110050CECF /* API */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		3D1DF8521AECBAB50050CECF /* My */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		3D1DF8531AECBAB50050CECF /* setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
+		3D1DF8541AECBDC10050CECF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D1DF8551AECBE120050CECF /* STPlayBarView.h */,
+				3D1DF8561AECBE120050CECF /* STPlayBarView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3D1DF8611AEE20420050CECF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D1DF85B1AEE18B60050CECF /* STModel.h */,
+				3D1DF85C1AEE18B60050CECF /* STModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3D1DF8621AEE204E0050CECF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3D1DF8631AEE209F0050CECF /* NSObject+JSONCategories.h */,
+				3D1DF8641AEE209F0050CECF /* NSObject+JSONCategories.m */,
+				3D1DF8661AEE21DE0050CECF /* NSString+JSONCategories.h */,
+				3D1DF8671AEE21DE0050CECF /* NSString+JSONCategories.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		3D5F34591AE21A320019103B = {
 			isa = PBXGroup;
 			children = (
-				3D5F348B1AE228D60019103B /* AVFoundation.framework */,
 				3D5F34641AE21A320019103B /* SongTaste */,
 				3D5F347E1AE21A320019103B /* SongTasteTests */,
 				3D5F34631AE21A320019103B /* Products */,
@@ -100,10 +248,12 @@
 		3D5F34641AE21A320019103B /* SongTaste */ = {
 			isa = PBXGroup;
 			children = (
+				3D1DF8501AECBAB50050CECF /* Module */,
+				3D1DF84A1AECB19E0050CECF /* Base */,
 				3D5F34691AE21A320019103B /* AppDelegate.h */,
 				3D5F346A1AE21A320019103B /* AppDelegate.m */,
-				3D5F346C1AE21A320019103B /* ViewController.h */,
-				3D5F346D1AE21A320019103B /* ViewController.m */,
+				3D5F346C1AE21A320019103B /* MainViewController.h */,
+				3D5F346D1AE21A320019103B /* MainViewController.m */,
 				3D5F346F1AE21A320019103B /* Main.storyboard */,
 				3D5F34721AE21A320019103B /* Images.xcassets */,
 				3D5F34741AE21A320019103B /* LaunchScreen.xib */,
@@ -117,6 +267,7 @@
 			children = (
 				3D5F34661AE21A320019103B /* Info.plist */,
 				3D5F34671AE21A320019103B /* main.m */,
+				3D1DF8591AECC5BE0050CECF /* SongTaste-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -232,6 +383,7 @@
 			files = (
 				3D5F34711AE21A320019103B /* Main.storyboard in Resources */,
 				3D5F34761AE21A320019103B /* LaunchScreen.xib in Resources */,
+				3D1DF8721AEE3EDC0050CECF /* MainTableViewCell.xib in Resources */,
 				3D5F34731AE21A320019103B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,9 +450,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D5F346E1AE21A320019103B /* ViewController.m in Sources */,
+				3D5F346E1AE21A320019103B /* MainViewController.m in Sources */,
+				3D1DF8601AEE1A3F0050CECF /* MusicModel.m in Sources */,
 				3D5F346B1AE21A320019103B /* AppDelegate.m in Sources */,
 				3D5F34681AE21A320019103B /* main.m in Sources */,
+				3D1DF8711AEE3EDC0050CECF /* MainTableViewCell.m in Sources */,
+				3D1DF8651AEE209F0050CECF /* NSObject+JSONCategories.m in Sources */,
+				3D1DF86D1AEE30190050CECF /* MusicNetWork.m in Sources */,
+				3D1DF85D1AEE18B60050CECF /* STModel.m in Sources */,
+				3D1DF8571AECBE120050CECF /* STPlayBarView.m in Sources */,
+				3D1DF8681AEE21DE0050CECF /* NSString+JSONCategories.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -415,7 +574,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -427,7 +586,9 @@
 			baseConfigurationReference = BDF4E0D8C978A74661A693F1 /* Pods-SongTaste.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "SongTaste/SongTaste-Prefix.pch";
 				INFOPLIST_FILE = SongTaste/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -438,7 +599,9 @@
 			baseConfigurationReference = 75A6A71D88EB63C97B721744 /* Pods-SongTaste.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "SongTaste/SongTaste-Prefix.pch";
 				INFOPLIST_FILE = SongTaste/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

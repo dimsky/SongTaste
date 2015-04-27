@@ -9,6 +9,31 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-SongTaste-FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SongTaste-JSONModel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SongTaste-MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SongTaste-PureLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SongTaste-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SongTaste.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>52C86F4B8098FE896A0640D4</key>
+		<key>04278B4A9AADCFD62BC8B7CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD9428054C54F4652985061A</key>
+		<key>0F8C84C8D5CF18BED2C3B90B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>34CE780A24A729262B54991E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>977902E9A2EDF39C77294346</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B4787D93496D43AA1EA402B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDCD9CE21BFF037711599ABE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F10D702CD21F89610AB90553</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -49,7 +49,17 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'AFNetworking.framework'
+  install_framework 'FMDB.framework'
+  install_framework 'JSONModel.framework'
+  install_framework 'MJRefresh.framework'
+  install_framework 'PureLayout.framework'
+  install_framework 'SDWebImage.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'AFNetworking.framework'
+  install_framework 'FMDB.framework'
+  install_framework 'JSONModel.framework'
+  install_framework 'MJRefresh.framework'
+  install_framework 'PureLayout.framework'
+  install_framework 'SDWebImage.framework'
 fi
