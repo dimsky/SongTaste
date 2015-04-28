@@ -16,6 +16,12 @@
 		3D1DF86D1AEE30190050CECF /* MusicNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF86C1AEE30190050CECF /* MusicNetWork.m */; };
 		3D1DF8711AEE3EDC0050CECF /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF86F1AEE3EDC0050CECF /* MainTableViewCell.m */; };
 		3D1DF8721AEE3EDC0050CECF /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1DF8701AEE3EDC0050CECF /* MainTableViewCell.xib */; };
+		3D1DF8761AEF39660050CECF /* MusicDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF8751AEF39660050CECF /* MusicDetailModel.m */; };
+		3D1DF8791AEF62100050CECF /* STNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF8781AEF62100050CECF /* STNavigationController.m */; };
+		3D1DF87D1AEF64FD0050CECF /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF87B1AEF64FD0050CECF /* TestViewController.m */; };
+		3D1DF87E1AEF64FD0050CECF /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1DF87C1AEF64FD0050CECF /* TestViewController.xib */; };
+		3D1DF8811AEF670C0050CECF /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF8801AEF670C0050CECF /* STViewController.m */; };
+		3D1DF8841AEF6CB10050CECF /* img003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D1DF8831AEF6CB10050CECF /* img003.jpg */; };
 		3D5F34681AE21A320019103B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F34671AE21A320019103B /* main.m */; };
 		3D5F346B1AE21A320019103B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F346A1AE21A320019103B /* AppDelegate.m */; };
 		3D5F346E1AE21A320019103B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F346D1AE21A320019103B /* MainViewController.m */; };
@@ -58,6 +64,16 @@
 		3D1DF86E1AEE3EDC0050CECF /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTableViewCell.h; path = Module/Music/MainTableViewCell.h; sourceTree = "<group>"; };
 		3D1DF86F1AEE3EDC0050CECF /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTableViewCell.m; path = Module/Music/MainTableViewCell.m; sourceTree = "<group>"; };
 		3D1DF8701AEE3EDC0050CECF /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainTableViewCell.xib; path = Module/Music/MainTableViewCell.xib; sourceTree = "<group>"; };
+		3D1DF8741AEF39660050CECF /* MusicDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicDetailModel.h; path = Module/Music/MusicDetailModel.h; sourceTree = "<group>"; };
+		3D1DF8751AEF39660050CECF /* MusicDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicDetailModel.m; path = Module/Music/MusicDetailModel.m; sourceTree = "<group>"; };
+		3D1DF8771AEF62100050CECF /* STNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STNavigationController.h; sourceTree = "<group>"; };
+		3D1DF8781AEF62100050CECF /* STNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STNavigationController.m; sourceTree = "<group>"; };
+		3D1DF87A1AEF64FD0050CECF /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		3D1DF87B1AEF64FD0050CECF /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		3D1DF87C1AEF64FD0050CECF /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		3D1DF87F1AEF670C0050CECF /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
+		3D1DF8801AEF670C0050CECF /* STViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STViewController.m; sourceTree = "<group>"; };
+		3D1DF8831AEF6CB10050CECF /* img003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img003.jpg; sourceTree = "<group>"; };
 		3D5F34621AE21A320019103B /* SongTaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongTaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5F34661AE21A320019103B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D5F34671AE21A320019103B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -117,6 +133,8 @@
 			children = (
 				3D1DF85E1AEE1A3F0050CECF /* MusicModel.h */,
 				3D1DF85F1AEE1A3F0050CECF /* MusicModel.m */,
+				3D1DF8741AEF39660050CECF /* MusicDetailModel.h */,
+				3D1DF8751AEF39660050CECF /* MusicDetailModel.m */,
 			);
 			name = Model;
 			path = ../..;
@@ -158,6 +176,13 @@
 				3D1DF8611AEE20420050CECF /* Model */,
 				3D1DF8541AECBDC10050CECF /* View */,
 				3D1DF85A1AECC6820050CECF /* GeneralClass.h */,
+				3D1DF8771AEF62100050CECF /* STNavigationController.h */,
+				3D1DF8781AEF62100050CECF /* STNavigationController.m */,
+				3D1DF87A1AEF64FD0050CECF /* TestViewController.h */,
+				3D1DF87B1AEF64FD0050CECF /* TestViewController.m */,
+				3D1DF87C1AEF64FD0050CECF /* TestViewController.xib */,
+				3D1DF87F1AEF670C0050CECF /* STViewController.h */,
+				3D1DF8801AEF670C0050CECF /* STViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -235,9 +260,19 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		3D1DF8821AEF6CB10050CECF /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				3D1DF8831AEF6CB10050CECF /* img003.jpg */,
+			);
+			name = Resourses;
+			path = SongTaste/Resourses;
+			sourceTree = "<group>";
+		};
 		3D5F34591AE21A320019103B = {
 			isa = PBXGroup;
 			children = (
+				3D1DF8821AEF6CB10050CECF /* Resourses */,
 				3D5F34641AE21A320019103B /* SongTaste */,
 				3D5F347E1AE21A320019103B /* SongTasteTests */,
 				3D5F34631AE21A320019103B /* Products */,
@@ -404,6 +439,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D5F34711AE21A320019103B /* Main.storyboard in Resources */,
+				3D1DF8841AEF6CB10050CECF /* img003.jpg in Resources */,
+				3D1DF87E1AEF64FD0050CECF /* TestViewController.xib in Resources */,
 				3D5F34761AE21A320019103B /* LaunchScreen.xib in Resources */,
 				3D1DF8721AEE3EDC0050CECF /* MainTableViewCell.xib in Resources */,
 				3D5F34731AE21A320019103B /* Images.xcassets in Resources */,
@@ -475,14 +512,18 @@
 				ABD4396B1AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.m in Sources */,
 				3D5F346E1AE21A320019103B /* MainViewController.m in Sources */,
 				3D1DF8601AEE1A3F0050CECF /* MusicModel.m in Sources */,
+				3D1DF8811AEF670C0050CECF /* STViewController.m in Sources */,
 				3D5F346B1AE21A320019103B /* AppDelegate.m in Sources */,
 				3D5F34681AE21A320019103B /* main.m in Sources */,
 				3D1DF8711AEE3EDC0050CECF /* MainTableViewCell.m in Sources */,
 				3D1DF8651AEE209F0050CECF /* NSObject+JSONCategories.m in Sources */,
 				3D1DF86D1AEE30190050CECF /* MusicNetWork.m in Sources */,
+				3D1DF8761AEF39660050CECF /* MusicDetailModel.m in Sources */,
+				3D1DF87D1AEF64FD0050CECF /* TestViewController.m in Sources */,
 				3D1DF85D1AEE18B60050CECF /* STModel.m in Sources */,
 				3D1DF8571AECBE120050CECF /* STPlayBarView.m in Sources */,
 				ABD439681AEE783E00A9AEA0 /* NCMusicEngine.m in Sources */,
+				3D1DF8791AEF62100050CECF /* STNavigationController.m in Sources */,
 				3D1DF8681AEE21DE0050CECF /* NSString+JSONCategories.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

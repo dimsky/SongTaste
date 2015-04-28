@@ -49,7 +49,9 @@ typedef void (^AFURLConnectionProgressiveOperationProgressBlock)(AFDownloadReque
 @property (nonatomic, copy) AFURLConnectionProgressiveOperationProgressBlock progressiveDownloadProgress;
 @end
 
-@implementation AFDownloadRequestOperation
+@implementation AFDownloadRequestOperation{
+    BOOL _useTempFile;
+}
 
 #pragma mark - NSObject
 
@@ -63,13 +65,13 @@ typedef void (^AFURLConnectionProgressiveOperationProgressBlock)(AFDownloadReque
 }
 
 - (id)initWithRequest:(NSURLRequest *)urlRequest targetPath:(NSString *)targetPath shouldResume:(BOOL)shouldResume {
-    return [self initWithRequest:urlRequest fileIdentifier:nil targetPath:targetPath shouldResume:shouldResume];
+    return [self initWithRequest:urlRequest fileIdentifier:nil targetPath:targetPath shouldResume:shouldResume useTempFile:YES];
 }
 
-- (id)initWithRequest:(NSURLRequest *)urlRequest fileIdentifier:(NSString *)fileIdentifier targetPath:(NSString *)targetPath shouldResume:(BOOL)shouldResume {    if ((self = [super initWithRequest:urlRequest])) {
+- (id)initWithRequest:(NSURLRequest *)urlRequest fileIdentifier:(NSString *)fileIdentifier targetPath:(NSString *)targetPath shouldResume:(BOOL)shouldResume useTempFile:(BOOL)useTempFile {    if ((self = [super initWithRequest:urlRequest])) {
         NSParameterAssert(targetPath != nil && urlRequest != nil);
         _shouldResume = shouldResume;
-
+        _useTempFile = useTempFile;
         self.fileIdentifier = fileIdentifier;
 
         // Ee assume that at least the directory has to exist on the targetPath
@@ -142,6 +144,10 @@ typedef void (^AFURLConnectionProgressiveOperationProgressBlock)(AFDownloadReque
 }
 
 - (NSString *)tempPath {
+    if (!_useTempFile) {
+        return _targetPath;
+    }
+    
     NSString *tempPath = nil;
     if (self.fileIdentifier) {
         tempPath = [[[self class] cacheFolder] stringByAppendingPathComponent:self.fileIdentifier];

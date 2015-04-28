@@ -11,6 +11,8 @@
 #import "NSObject+JSONCategories.h"
 #import "NSString+JSONCategories.h"
 #import "MusicModel.h"
+#import "MusicDetailModel.h"
+#import "Ono/Ono.h"
 
 @implementation MusicNetWork
 
@@ -76,19 +78,31 @@
 }
 
 
-- (void)musicURLWithId:(int)musicId success:(void(^)(MusicModel *music))successBlock failed:(void(^)(NSError *error))failedBlock {
+- (void)musicDetailWithId:(int)musicId success:(void(^)(MusicDetailModel *music))successBlock failed:(void(^)(NSError *error))failedBlock {
     NSDictionary *param = @{@"songid": @(musicId)};
     AFHTTPRequestOperationManager *manager =  [AFHTTPRequestOperationManager manager];
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [manager GET:@"http://songtaste.com/api/android/songurl.php" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSMutableArray *array = [NSMutableArray new];
-        for (id obj in responseObject[@"data"]) {
-            MusicModel *musicModel = [[MusicModel alloc] initWithString:[obj JSONString] error:nil] ;
-            [array addObject:musicModel];
+
+        ONOXMLDocument *document = [ONOXMLDocument XMLDocumentWithData:responseObject error:nil];
+        NSString *jsonStr = @"{";
+        for (ONOXMLElement *element in document.rootElement.children) {
+            jsonStr = [jsonStr stringByAppendingFormat:@"\"%@\": \"%@\", ", element.tag, element.stringValue];
+            
         }
+        jsonStr = [jsonStr stringByAppendingString:@"}"];
+        NSLog(@"%@",jsonStr);
+        NSError *error = nil;
+        MusicDetailModel *musicDetailModel = [[MusicDetailModel alloc] initWithString:jsonStr error:&error];
         
-        successBlock(array);
+//        for (id obj in responseObject[@"data"]) {
+//            MusicModel *musicModel = [[MusicModel alloc] initWithString:[obj JSONString] error:nil] ;
+//            [array addObject:musicModel];
+//        }
+//        
+//        successBlock(array);
+        successBlock(musicDetailModel);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failedBlock(error);

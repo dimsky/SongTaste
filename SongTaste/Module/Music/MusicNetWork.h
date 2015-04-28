@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MusicModel.h"
 
+@class MusicModel;
+@class MusicDetailModel;
 @interface MusicNetWork : NSObject
 
 + (instancetype)sharedInstance;
@@ -20,6 +21,6 @@
 - (void)recommendMusicListWithCount:(int)count success:(void(^)(NSArray *result))successBlock failed:(void(^)(NSError *error))failedBlock;
 
 
-- (void)musicURLWithId:(int)musicId success:(void(^)(MusicModel *music))successBlock failed:(void(^)(NSError *error))failedBlock;
+- (void)musicDetailWithId:(int)musicId success:(void(^)(MusicDetailModel *music))successBlock failed:(void(^)(NSError *error))failedBlock;
 
 @end

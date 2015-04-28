@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "STNavigationController.h"
+#import "MainViewController.h"
+#import "TestViewController.h"
 
 @interface AppDelegate ()
+
 
 @end
 
@@ -17,6 +21,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    MainViewController *mainViewController = [[MainViewController alloc] init];
+    TestViewController *testViewController = [[TestViewController alloc] init];
+    self.window.rootViewController = [[STNavigationController alloc] initWithRootViewController:mainViewController];
+    
+    
+    
     return YES;
 }
 

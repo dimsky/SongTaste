@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STViewController.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : STViewController
 
 
 @end

@@ -41,6 +41,7 @@
 //</MusicModel>
 
 
+
 @property(assign, nonatomic)int Click;
 @property(assign, nonatomic)int DevType;
 @property(assign, nonatomic)int FavNum;

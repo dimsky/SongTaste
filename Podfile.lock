@@ -26,7 +26,9 @@ PODS:
   - FMDB/standard (2.5):
     - FMDB/common
   - JSONModel (1.0.2)
+  - MBProgressHUD (0.9.1)
   - MJRefresh (1.4.5)
+  - Ono (1.2.1)
   - PureLayout (2.0.6)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
@@ -36,7 +38,9 @@ DEPENDENCIES:
   - AFNetworking
   - FMDB
   - JSONModel
+  - MBProgressHUD
   - MJRefresh
+  - Ono
   - PureLayout
   - SDWebImage
 
@@ -44,8 +48,10 @@ SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: 4b24394e577ea399fbc926e5b6072317aae2c152
+  Ono: 1122212de602280cc7af19d7ab12ee98a3fc0339
   PureLayout: f25f0bb904d5ccfe6e31da3cb869185259f02e0d
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 
-COCOAPODS: 0.36.3
+COCOAPODS: 0.36.4

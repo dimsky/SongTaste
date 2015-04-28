@@ -103,8 +103,11 @@
     }
     
 
-    self.operation = [[AFDownloadRequestOperation alloc] initWithRequest:request targetPath:_localFilePath shouldResume:YES ];
+    self.operation = [[AFDownloadRequestOperation alloc] initWithRequest:request fileIdentifier:nil targetPath:_localFilePath shouldResume:YES useTempFile:NO];
 //    __typeof(&*self) __weak weakSelf = self;
+    
+//    __weak typeof(self) weakSelf = self;
+//    __weak NSString *aa = @"";
     __block  __typeof(self) weakSelf = self;
     [self.operation setProgressiveDownloadProgressBlock:^(AFDownloadRequestOperation *ro, NSInteger bytesRead, long long totalBytesRead, long long totalBytesExpected, long long totalBytesReadForFile, long long totalBytesExpectedToReadForFile) {
         //
@@ -112,10 +115,9 @@
         DDLogInfo(@"[NCMusicEngine] Download Progress: %u, %lld, %lld, %lld, %lld",
                   bytesRead, totalBytesRead, totalBytesExpected, totalBytesReadForFile, totalBytesExpectedToReadForFile);
 #else
-        NSLog(@"[NCMusicEngine] Download Progress: %u, %lld, %lld, %lld, %lld",
-              bytesRead, totalBytesRead, totalBytesExpected, totalBytesReadForFile, totalBytesExpectedToReadForFile);
+//        NSLog(@"[NCMusicEngine] Download Progress: %ld, %lld, %lld, %lld, %lld",
+//              bytesRead, totalBytesRead, totalBytesExpected, totalBytesReadForFile, totalBytesExpectedToReadForFile);
 #endif
-        
         //
         if (weakSelf.delegate &&
             [weakSelf.delegate conformsToProtocol:@protocol(NCMusicEngineDelegate)] &&
@@ -227,7 +229,7 @@
 #ifdef DDLogInfo
     DDLogInfo(@"[NCMusicEngine] Music playing progress: %f / %f", playerCurrentTime, playerDuration);
 #else
-    NSLog(@"[NCMusicEngine] Music playing progress: %f / %f", playerCurrentTime, playerDuration);
+//    NSLog(@"[NCMusicEngine] Music playing progress: %f / %f", playerCurrentTime, playerDuration);
 #endif
     
 //    [self.button setProgress:playerCurrentTime/playerDuration];
@@ -295,7 +297,7 @@
 }
 
 - (NSString *)cacheKeyFromUrl:(NSURL *)url {
-    NSString *key = [NSString stringWithFormat:@"%x", url.absoluteString.hash];
+    NSString *key = [NSString stringWithFormat:@"%lx", url.absoluteString.hash];
     return key;
 }
 
@@ -322,7 +324,7 @@
     static NSString *cacheFolder;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *cacheDir = [[[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject] path];
+        NSString *cacheDir = (NSString *)[[[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject] path];
         cacheFolder = [cacheDir stringByAppendingPathComponent:kNCMusicEngineCacheFolderName];
         
         // ensure all cache directories are there (needed only once)

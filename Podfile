@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '6.1'
 use_frameworks!
 
 target 'SongTaste' do
@@ -9,5 +9,6 @@ target 'SongTaste' do
   pod "JSONModel"
   pod "MJRefresh"
   pod "Ono"
+  pod "MBProgressHUD"
 end
 
