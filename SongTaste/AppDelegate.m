@@ -10,6 +10,9 @@
 #import "STNavigationController.h"
 #import "MainViewController.h"
 #import "TestViewController.h"
+#import "STPlayBarView.h"
+#import "MediaPlayer/MediaPlayer.h"
+#import "MusicDetailModel.h"
 
 @interface AppDelegate ()
 
@@ -27,7 +30,9 @@
     TestViewController *testViewController = [[TestViewController alloc] init];
     self.window.rootViewController = [[STNavigationController alloc] initWithRootViewController:mainViewController];
     
-    
+    //接收远程事件
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
     
     return YES;
 }
@@ -40,6 +45,11 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    
+    
+    [[STPlayBarView sharedInstance] updateControlNowPlayingInfo];
+
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -52,6 +62,36 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    
+//    NSLog(@"%@", event.subtype);
+    if(event.type == UIEventTypeRemoteControl) {
+        switch (event.subtype) {
+            case UIEventSubtypeRemoteControlPlay:
+                [[STPlayBarView sharedInstance] playAndStopMusic];
+                NSLog(@"RemoteControlEvents: play");
+                break;
+            case UIEventSubtypeRemoteControlPause:
+                [[STPlayBarView sharedInstance] playAndStopMusic];
+                NSLog(@"RemoteControlEvents: pause");
+                break;
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+                [[STPlayBarView sharedInstance] playAndStopMusic];
+                NSLog(@"RemoteControlEvents: pause");
+                break;
+            case UIEventSubtypeRemoteControlNextTrack:
+                [[STPlayBarView sharedInstance] playMusicNext];
+                NSLog(@"RemoteControlEvents: playModeNext");
+                break;
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                [[STPlayBarView sharedInstance] playMusicPrev];
+                NSLog(@"RemoteControlEvents: playPrev");
+                break;
+            default:
+            break;        }
+    }
 }
 
 @end

@@ -79,7 +79,7 @@ static NSString *get_music_url = @"http://songtaste.com/api/android/rec_list.php
     [self.view bringSubviewToFront:_backgroundImageView];
     
     _headerView = [UIView newAutoLayoutView];
-    _headerView.alpha = 0.7;
+    _headerView.alpha = 0.8;
     [_headerView setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:_headerView];
     [_headerView autoPinEdgeToSuperviewEdge:ALEdgeTop];
@@ -114,7 +114,7 @@ static NSString *get_music_url = @"http://songtaste.com/api/android/rec_list.php
     
     
     _mainTableView = [UITableView newAutoLayoutView];
-    _mainTableView.alpha = 0.6;
+    _mainTableView.alpha = 0.7;
     _mainTableView.dataSource = self;
     _mainTableView.delegate = self;
     [self.view addSubview:_mainTableView];

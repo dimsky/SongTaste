@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @protocol STPlayBarViewDelegate;
 
 @class NCMusicEngine;
+@class MusicDetailModel;
 
 @interface STPlayBarView : UIView
 @property (nonatomic,strong) UIButton *playBtn; //播放
@@ -27,10 +27,25 @@
 
 @property (nonatomic,assign) id<STPlayBarViewDelegate> delegate;
 
+@property (nonatomic,strong)MusicDetailModel *playingMusicInfo;
 
+
++ (instancetype)sharedInstance;
 - (void)playMusicWithIndex:(NSInteger)index;
+///上一曲
+- (void)playMusicPrev;
+///下一曲
+- (void)playMusicNext;
+///暂停
+//- (void)pauseMusic;
 
+- (void)playAndStopMusic;
+
+- (void)updateControlNowPlayingInfo;
 @end
+
+
+
 
 @protocol STPlayBarViewDelegate <NSObject>
 

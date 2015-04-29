@@ -12,12 +12,13 @@
 //#import "Mp3PlayerButton.h"
 
 
+#define DDLogInfo
+
 @interface NCMusicEngine () <AVAudioPlayerDelegate>
 @property (nonatomic, assign, readwrite) NCMusicEnginePlayState playState;
 @property (nonatomic, assign, readwrite) NCMusicEngineDownloadState downloadState;
 @property (nonatomic, strong, readwrite) NSError *error;
 @property (nonatomic, strong) AFDownloadRequestOperation *operation;
-@property (nonatomic, strong) AVAudioPlayer *player;
 @property (nonatomic, assign) BOOL _pausedByUser;
 
 - (void)playLocalFile;
@@ -28,7 +29,7 @@
     NSString *_localFilePath;
     NSTimer *_playCheckingTimer;
 }
-@synthesize button;
+
 @synthesize operation = _operation;
 @synthesize player = _player;
 @synthesize playState = _playState;
@@ -56,6 +57,7 @@
     
     //
     if (setBGPlay) {
+        //后台播放
         [[AVAudioSession sharedInstance] setActive: YES error: nil];
         [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
         [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
@@ -115,8 +117,8 @@
         DDLogInfo(@"[NCMusicEngine] Download Progress: %u, %lld, %lld, %lld, %lld",
                   bytesRead, totalBytesRead, totalBytesExpected, totalBytesReadForFile, totalBytesExpectedToReadForFile);
 #else
-//        NSLog(@"[NCMusicEngine] Download Progress: %ld, %lld, %lld, %lld, %lld",
-//              bytesRead, totalBytesRead, totalBytesExpected, totalBytesReadForFile, totalBytesExpectedToReadForFile);
+        NSLog(@"[NCMusicEngine] Download Progress: %ld, %lld, %lld, %lld, %lld",
+              bytesRead, totalBytesRead, totalBytesExpected, totalBytesReadForFile, totalBytesExpectedToReadForFile);
 #endif
         //
         if (weakSelf.delegate &&

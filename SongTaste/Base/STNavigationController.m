@@ -22,7 +22,7 @@
     // Do any additional setup after loading the view.
     self.title = @"test";
     
-    _playBarView = [STPlayBarView newAutoLayoutView];
+    _playBarView = [STPlayBarView sharedInstance];
     [_playBarView setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:_playBarView];
     

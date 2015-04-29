@@ -24,11 +24,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [self initSubViews];
     }
     return self;
 }
-
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -38,8 +37,6 @@
     
     return self;
 }
-
-
 
 - (instancetype)init {
     self = [super init];

@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class Mp3PlayerButton;
-
+@class AVAudioPlayer;
 #define kNCMusicEngineCacheFolderName @"dimsky.music"
 #define kNCMusicEngineCheckMusicInterval 0.1f // Seconds
 #define kNCMusicEngineSizeBuffer 100000.0f // Bytes
@@ -37,14 +36,13 @@ typedef enum {
 
 @interface NCMusicEngine : NSObject
 {
-    Mp3PlayerButton *button;
 }
 
-@property (nonatomic, strong) Mp3PlayerButton *button;
 @property (nonatomic, assign, readonly) NCMusicEnginePlayState playState;
 @property (nonatomic, assign, readonly) NCMusicEngineDownloadState downloadState;
 @property (nonatomic, strong, readonly) NSError *error;
 @property (weak) id<NCMusicEngineDelegate> delegate;
+@property (nonatomic, strong) AVAudioPlayer *player;
 
 - (id)initWithSetBackgroundPlaying:(BOOL)setBGPlay;
 - (void)playUrl:(NSURL*)url;

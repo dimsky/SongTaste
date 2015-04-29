@@ -12,6 +12,8 @@
 #import "MusicDetailModel.h"
 #import "MusicModel.h"
 #import "MusicNetWork.h"
+#import "MediaPlayer/MediaPlayer.h"
+#import "AVFoundation/AVFoundation.h"
 
 
 @interface STPlayBarView() <NCMusicEngineDelegate>
@@ -20,6 +22,16 @@
 
 @implementation STPlayBarView
 
+
+
++ (instancetype)sharedInstance {
+    __strong static STPlayBarView *_instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [[STPlayBarView alloc] init];
+    });
+    return _instance;
+}
 
 - (instancetype)init {
     self = [super init];
@@ -131,6 +143,7 @@
 
 - (void)playMusicWithURLStr:(NSString *)URLStr{
     [self.musicEngine playUrl:[NSURL URLWithString:URLStr]];
+    
 }
 
 
@@ -143,8 +156,11 @@
         MusicModel *music = self.musicArray[_playingIndex];
         __weak typeof(self) weakSelf = self;
         [[MusicNetWork sharedInstance] musicDetailWithId:music.ID success:^(MusicDetailModel *musicDetail) {
+            self.playingMusicInfo = musicDetail;
             [weakSelf playMusicWithURLStr:musicDetail.url];
+            [self updateControlNowPlayingInfo];
             [_playBtn setTitle:@"暂停" forState:UIControlStateNormal];
+            
         } failed:^(NSError *error) {
             
         }];
@@ -153,18 +169,74 @@
     }
 }
 
+///上一曲
+- (void)playMusicPrev{
+    --_playingIndex;
+    if (_playingIndex == - 1) {
+        _playingIndex = (int)(self.musicArray.count - 1);
+    }
+    
+    [self playMusicWithIndex:_playingIndex];
+    
+
+}
+
+///下一曲
 - (void)playMusicNext{
     ++_playingIndex;
     if (_playingIndex == self.musicArray.count) {
         _playingIndex = 0;
     }
     [self playMusicWithIndex:_playingIndex];
+
+}
+
+///暂停
+- (void)playAndStopMusic {
+    if (self.musicEngine.playState == NCMusicEnginePlayStatePlaying) {
+        [self.musicEngine pause];
+    } else if (self.musicEngine.playState == NCMusicEnginePlayStatePaused){
+        [self.musicEngine resume];
+    } else {
+        if (_musicArray.count > 0) {
+            [self playMusicWithIndex:0];
+        }
+    }
+    
+}
+
+- (void)updateControlNowPlayingInfo {
+    if (!_playingMusicInfo) {
+        return;
+    }
+    NSMutableDictionary *dict = nil;
+    if ([[MPNowPlayingInfoCenter defaultCenter] nowPlayingInfo]) {
+        
+        dict = [NSMutableDictionary dictionaryWithDictionary:[[MPNowPlayingInfoCenter defaultCenter] nowPlayingInfo]];
+    } else {
+        dict = [[NSMutableDictionary alloc] init];
+    }
+    
+    [dict setObject:_playingMusicInfo.song_name forKey:MPMediaItemPropertyTitle];
+    [dict setObject:_playingMusicInfo.singer_name  forKey:MPMediaItemPropertyArtist];
+    [dict setObject:[NSNumber numberWithDouble:self.musicEngine.player.currentTime] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
+    if (self.musicEngine.playState == NCMusicEnginePlayStatePlaying) {
+         [dict setObject:[NSNumber numberWithFloat:1.0] forKey:MPNowPlayingInfoPropertyPlaybackRate];
+    } else {
+         [dict setObject:[NSNumber numberWithFloat:0.0] forKey:MPNowPlayingInfoPropertyPlaybackRate];
+    }
+//    [dict setObject:[NSNumber numberWithFloat:1.0] forKey:MPNowPlayingInfoPropertyPlaybackRate];
+    [dict setObject:[NSNumber numberWithLong:_playingMusicInfo.Mlength] forKey:MPMediaItemPropertyPlaybackDuration];
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:nil];
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:dict];
+
 }
 
 
 #pragma mark NCMusicEngineDelegate
 
 - (void)engine:(NCMusicEngine *)engine didChangePlayState:(NCMusicEnginePlayState)playState {
+    [self updateControlNowPlayingInfo];
     
 }
 - (void)engine:(NCMusicEngine *)engine didChangeDownloadState:(NCMusicEngineDownloadState)downloadState{
