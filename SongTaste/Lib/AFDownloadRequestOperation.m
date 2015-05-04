@@ -132,6 +132,9 @@ typedef void (^AFURLConnectionProgressiveOperationProgressBlock)(AFDownloadReque
 #pragma mark - Public
 
 - (BOOL)deleteTempFileWithError:(NSError *__autoreleasing*)error {
+    if (!_useTempFile) {
+        return YES;
+    }
     NSFileManager *fileManager = [NSFileManager new];
     BOOL success = YES;
     @synchronized(self) {
@@ -228,7 +231,7 @@ typedef void (^AFURLConnectionProgressiveOperationProgressBlock)(AFDownloadReque
                 }
                 
                 // loss of network connections = error set, but not cancel
-            }else if(!self.error) {
+            }else if(!self.error && _useTempFile) {
                 // move file to final position and capture error
                 NSFileManager *fileManager = [NSFileManager new];
                 if (self.shouldOverwrite) {

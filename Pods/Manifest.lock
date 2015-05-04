@@ -25,6 +25,7 @@ PODS:
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
+  - FXBlurView (1.6.3)
   - JSONModel (1.0.2)
   - MBProgressHUD (0.9.1)
   - MJRefresh (1.4.5)
@@ -37,6 +38,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - FMDB
+  - FXBlurView
   - JSONModel
   - MBProgressHUD
   - MJRefresh
@@ -47,6 +49,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  FXBlurView: c6d23f3d35af2c6282296a2930f61c6e2c788d01
   JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: 4b24394e577ea399fbc926e5b6072317aae2c152

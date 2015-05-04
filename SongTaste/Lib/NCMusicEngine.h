@@ -43,6 +43,7 @@ typedef enum {
 @property (nonatomic, strong, readonly) NSError *error;
 @property (weak) id<NCMusicEngineDelegate> delegate;
 @property (nonatomic, strong) AVAudioPlayer *player;
+@property (nonatomic, assign) long fileSize;
 
 - (id)initWithSetBackgroundPlaying:(BOOL)setBGPlay;
 - (void)playUrl:(NSURL*)url;
@@ -50,6 +51,10 @@ typedef enum {
 - (void)pause;
 - (void)resume;
 - (void)stop; // Stop music and stop download.
+- (void)playLocalMusicWithName:(NSString *)name;
+- (NSString *)cacheKeyFromUrl:(NSURL *)url;
++ (NSString *)cacheFolder;
+
 
 @end
 

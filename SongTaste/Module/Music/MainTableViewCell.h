@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class MusicModel;
+@class MusicDetailModel;
 @interface MainTableViewCell : UITableViewCell
 
 @property (strong, nonatomic)UIImageView *titleIcon;
@@ -28,5 +29,7 @@
 @property (strong, nonatomic)UILabel *collectCountLabel;
 
 @property (strong, nonatomic)MusicModel *model;
+
+@property (weak, nonatomic)MusicDetailModel *detailModel;
 
 @end

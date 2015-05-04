@@ -20,14 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"test";
-    
     _playBarView = [STPlayBarView sharedInstance];
-    [_playBarView setBackgroundColor:[UIColor redColor]];
+    [_playBarView setBackgroundColor:[UIColor grayColor]];
     [self.view addSubview:_playBarView];
     
     [_playBarView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-    [_playBarView autoSetDimensionsToSize:CGSizeMake(SCREEN_WIDTH, 50)];
+    [_playBarView autoSetDimensionsToSize:CGSizeMake(SCREEN_WIDTH, MainViewControllerFooterHeight)];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(musicArrayChange:) name:MUSICARRAY_CHANGE_NOTIFICATION object:nil];
 }

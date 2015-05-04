@@ -10,6 +10,9 @@
 
 @implementation MusicModel
 
-
+///对象对比 通过ID
+- (NSString *)indexPropertyName {
+    return @"ID";
+}
 
 @end

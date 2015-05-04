@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		18E744AC145DB7BEC5A1F225 /* Pods_SongTaste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0465727313359026480B4D92 /* Pods_SongTaste.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3D0D6E521AF466FE00BCFB8D /* MusicDiscoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D6E511AF466FE00BCFB8D /* MusicDiscoverView.m */; };
+		3D0D6E571AF508CB00BCFB8D /* STGlobalUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D6E561AF508CB00BCFB8D /* STGlobalUtils.m */; };
+		3D0D6E5A1AF512AB00BCFB8D /* MyMusicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D6E591AF512AB00BCFB8D /* MyMusicView.m */; };
+		3D0D6E5F1AF5C50600BCFB8D /* MyLocalMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D6E5E1AF5C50600BCFB8D /* MyLocalMusicViewController.m */; };
+		3D0D6E621AF5CC3100BCFB8D /* UIView+ViewControllerCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D6E611AF5CC3100BCFB8D /* UIView+ViewControllerCategories.m */; };
+		3D0D6E651AF5CEF700BCFB8D /* MyFavoriteMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D6E641AF5CEF700BCFB8D /* MyFavoriteMusicViewController.m */; };
+		3D0D6E681AF6644E00BCFB8D /* STLocalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D6E671AF6644E00BCFB8D /* STLocalModel.m */; };
+		3D0D6E751AF6665F00BCFB8D /* MusicLocalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D6E741AF6665F00BCFB8D /* MusicLocalModel.m */; };
+		3D1679761AF34DC7000FA0D2 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D1679751AF34DC7000FA0D2 /* test.mp3 */; };
 		3D1DF8571AECBE120050CECF /* STPlayBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF8561AECBE120050CECF /* STPlayBarView.m */; };
 		3D1DF85D1AEE18B60050CECF /* STModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF85C1AEE18B60050CECF /* STModel.m */; };
 		3D1DF8601AEE1A3F0050CECF /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF85F1AEE1A3F0050CECF /* MusicModel.m */; };
@@ -18,8 +27,6 @@
 		3D1DF8721AEE3EDC0050CECF /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1DF8701AEE3EDC0050CECF /* MainTableViewCell.xib */; };
 		3D1DF8761AEF39660050CECF /* MusicDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF8751AEF39660050CECF /* MusicDetailModel.m */; };
 		3D1DF8791AEF62100050CECF /* STNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF8781AEF62100050CECF /* STNavigationController.m */; };
-		3D1DF87D1AEF64FD0050CECF /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF87B1AEF64FD0050CECF /* TestViewController.m */; };
-		3D1DF87E1AEF64FD0050CECF /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D1DF87C1AEF64FD0050CECF /* TestViewController.xib */; };
 		3D1DF8811AEF670C0050CECF /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1DF8801AEF670C0050CECF /* STViewController.m */; };
 		3D1DF8841AEF6CB10050CECF /* img003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D1DF8831AEF6CB10050CECF /* img003.jpg */; };
 		3D5F34681AE21A320019103B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F34671AE21A320019103B /* main.m */; };
@@ -30,6 +37,7 @@
 		3D5F34761AE21A320019103B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D5F34741AE21A320019103B /* LaunchScreen.xib */; };
 		3D5F34821AE21A320019103B /* SongTasteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F34811AE21A320019103B /* SongTasteTests.m */; };
 		3D5F348C1AE228D60019103B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5F348B1AE228D60019103B /* AVFoundation.framework */; };
+		3DB6CEB41AF75248009505D7 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6CEB31AF75248009505D7 /* FMDBManager.m */; };
 		ABD439681AEE783E00A9AEA0 /* NCMusicEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD439671AEE783E00A9AEA0 /* NCMusicEngine.m */; };
 		ABD4396B1AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD4396A1AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.m */; };
 		ABD4396D1AEE8C8200A9AEA0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD4396C1AEE8C8200A9AEA0 /* libxml2.dylib */; };
@@ -47,6 +55,24 @@
 
 /* Begin PBXFileReference section */
 		0465727313359026480B4D92 /* Pods_SongTaste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SongTaste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D0D6E501AF466FE00BCFB8D /* MusicDiscoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDiscoverView.h; sourceTree = "<group>"; };
+		3D0D6E511AF466FE00BCFB8D /* MusicDiscoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDiscoverView.m; sourceTree = "<group>"; };
+		3D0D6E551AF508CB00BCFB8D /* STGlobalUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STGlobalUtils.h; sourceTree = "<group>"; };
+		3D0D6E561AF508CB00BCFB8D /* STGlobalUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STGlobalUtils.m; sourceTree = "<group>"; };
+		3D0D6E581AF512AB00BCFB8D /* MyMusicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMusicView.h; sourceTree = "<group>"; };
+		3D0D6E591AF512AB00BCFB8D /* MyMusicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMusicView.m; sourceTree = "<group>"; };
+		3D0D6E5D1AF5C50600BCFB8D /* MyLocalMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLocalMusicViewController.h; sourceTree = "<group>"; };
+		3D0D6E5E1AF5C50600BCFB8D /* MyLocalMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLocalMusicViewController.m; sourceTree = "<group>"; };
+		3D0D6E601AF5CC3100BCFB8D /* UIView+ViewControllerCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewControllerCategories.h"; sourceTree = "<group>"; };
+		3D0D6E611AF5CC3100BCFB8D /* UIView+ViewControllerCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewControllerCategories.m"; sourceTree = "<group>"; };
+		3D0D6E631AF5CEF700BCFB8D /* MyFavoriteMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFavoriteMusicViewController.h; sourceTree = "<group>"; };
+		3D0D6E641AF5CEF700BCFB8D /* MyFavoriteMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFavoriteMusicViewController.m; sourceTree = "<group>"; };
+		3D0D6E661AF6644E00BCFB8D /* STLocalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLocalModel.h; sourceTree = "<group>"; };
+		3D0D6E671AF6644E00BCFB8D /* STLocalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLocalModel.m; sourceTree = "<group>"; };
+		3D0D6E731AF6665F00BCFB8D /* MusicLocalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicLocalModel.h; sourceTree = "<group>"; };
+		3D0D6E741AF6665F00BCFB8D /* MusicLocalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicLocalModel.m; sourceTree = "<group>"; };
+		3D0D6E761AF66FC500BCFB8D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		3D1679751AF34DC7000FA0D2 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = test.mp3; path = ../../../../../Desktop/dimsky.music/test.mp3; sourceTree = "<group>"; };
 		3D1DF8551AECBE120050CECF /* STPlayBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPlayBarView.h; sourceTree = "<group>"; };
 		3D1DF8561AECBE120050CECF /* STPlayBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPlayBarView.m; sourceTree = "<group>"; };
 		3D1DF8591AECC5BE0050CECF /* SongTaste-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SongTaste-Prefix.pch"; sourceTree = "<group>"; };
@@ -68,9 +94,6 @@
 		3D1DF8751AEF39660050CECF /* MusicDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicDetailModel.m; path = Module/Music/MusicDetailModel.m; sourceTree = "<group>"; };
 		3D1DF8771AEF62100050CECF /* STNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STNavigationController.h; sourceTree = "<group>"; };
 		3D1DF8781AEF62100050CECF /* STNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STNavigationController.m; sourceTree = "<group>"; };
-		3D1DF87A1AEF64FD0050CECF /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		3D1DF87B1AEF64FD0050CECF /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		3D1DF87C1AEF64FD0050CECF /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		3D1DF87F1AEF670C0050CECF /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
 		3D1DF8801AEF670C0050CECF /* STViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STViewController.m; sourceTree = "<group>"; };
 		3D1DF8831AEF6CB10050CECF /* img003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img003.jpg; sourceTree = "<group>"; };
@@ -88,6 +111,8 @@
 		3D5F34801AE21A320019103B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D5F34811AE21A320019103B /* SongTasteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongTasteTests.m; sourceTree = "<group>"; };
 		3D5F348B1AE228D60019103B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3DB6CEB21AF75248009505D7 /* FMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
+		3DB6CEB31AF75248009505D7 /* FMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
 		75A6A71D88EB63C97B721744 /* Pods-SongTaste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongTaste.release.xcconfig"; path = "Pods/Target Support Files/Pods-SongTaste/Pods-SongTaste.release.xcconfig"; sourceTree = "<group>"; };
 		ABD439661AEE783E00A9AEA0 /* NCMusicEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCMusicEngine.h; sourceTree = "<group>"; };
 		ABD439671AEE783E00A9AEA0 /* NCMusicEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCMusicEngine.m; sourceTree = "<group>"; };
@@ -121,11 +146,39 @@
 		259C41AB1C54EB5E72C16904 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D0D6E761AF66FC500BCFB8D /* libsqlite3.dylib */,
 				ABD4396C1AEE8C8200A9AEA0 /* libxml2.dylib */,
 				3D5F348B1AE228D60019103B /* AVFoundation.framework */,
 				0465727313359026480B4D92 /* Pods_SongTaste.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D0D6E541AF502D400BCFB8D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3D0D6E551AF508CB00BCFB8D /* STGlobalUtils.h */,
+				3D0D6E561AF508CB00BCFB8D /* STGlobalUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		3D0D6E5B1AF5C4D100BCFB8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3D0D6E5C1AF5C4D700BCFB8D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D0D6E5D1AF5C50600BCFB8D /* MyLocalMusicViewController.h */,
+				3D0D6E5E1AF5C50600BCFB8D /* MyLocalMusicViewController.m */,
+				3D0D6E631AF5CEF700BCFB8D /* MyFavoriteMusicViewController.h */,
+				3D0D6E641AF5CEF700BCFB8D /* MyFavoriteMusicViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		3D1DF8441AECAEC20050CECF /* Model */ = {
@@ -135,6 +188,8 @@
 				3D1DF85F1AEE1A3F0050CECF /* MusicModel.m */,
 				3D1DF8741AEF39660050CECF /* MusicDetailModel.h */,
 				3D1DF8751AEF39660050CECF /* MusicDetailModel.m */,
+				3D0D6E731AF6665F00BCFB8D /* MusicLocalModel.h */,
+				3D0D6E741AF6665F00BCFB8D /* MusicLocalModel.m */,
 			);
 			name = Model;
 			path = ../..;
@@ -172,15 +227,13 @@
 		3D1DF84A1AECB19E0050CECF /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				3D0D6E541AF502D400BCFB8D /* Utils */,
 				3D1DF8621AEE204E0050CECF /* Categories */,
 				3D1DF8611AEE20420050CECF /* Model */,
 				3D1DF8541AECBDC10050CECF /* View */,
 				3D1DF85A1AECC6820050CECF /* GeneralClass.h */,
 				3D1DF8771AEF62100050CECF /* STNavigationController.h */,
 				3D1DF8781AEF62100050CECF /* STNavigationController.m */,
-				3D1DF87A1AEF64FD0050CECF /* TestViewController.h */,
-				3D1DF87B1AEF64FD0050CECF /* TestViewController.m */,
-				3D1DF87C1AEF64FD0050CECF /* TestViewController.xib */,
 				3D1DF87F1AEF670C0050CECF /* STViewController.h */,
 				3D1DF8801AEF670C0050CECF /* STViewController.m */,
 			);
@@ -208,6 +261,8 @@
 		3D1DF8511AECBAB50050CECF /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				3D0D6E501AF466FE00BCFB8D /* MusicDiscoverView.h */,
+				3D0D6E511AF466FE00BCFB8D /* MusicDiscoverView.m */,
 				3D1DF84C1AECB1BC0050CECF /* Controller */,
 				3D1DF8441AECAEC20050CECF /* Model */,
 				3D1DF8461AECAF020050CECF /* View */,
@@ -220,6 +275,10 @@
 		3D1DF8521AECBAB50050CECF /* My */ = {
 			isa = PBXGroup;
 			children = (
+				3D0D6E581AF512AB00BCFB8D /* MyMusicView.h */,
+				3D0D6E591AF512AB00BCFB8D /* MyMusicView.m */,
+				3D0D6E5C1AF5C4D700BCFB8D /* Controller */,
+				3D0D6E5B1AF5C4D100BCFB8D /* View */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -245,6 +304,10 @@
 			children = (
 				3D1DF85B1AEE18B60050CECF /* STModel.h */,
 				3D1DF85C1AEE18B60050CECF /* STModel.m */,
+				3D0D6E661AF6644E00BCFB8D /* STLocalModel.h */,
+				3D0D6E671AF6644E00BCFB8D /* STLocalModel.m */,
+				3DB6CEB21AF75248009505D7 /* FMDBManager.h */,
+				3DB6CEB31AF75248009505D7 /* FMDBManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -256,6 +319,8 @@
 				3D1DF8641AEE209F0050CECF /* NSObject+JSONCategories.m */,
 				3D1DF8661AEE21DE0050CECF /* NSString+JSONCategories.h */,
 				3D1DF8671AEE21DE0050CECF /* NSString+JSONCategories.m */,
+				3D0D6E601AF5CC3100BCFB8D /* UIView+ViewControllerCategories.h */,
+				3D0D6E611AF5CC3100BCFB8D /* UIView+ViewControllerCategories.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -263,6 +328,7 @@
 		3D1DF8821AEF6CB10050CECF /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				3D1679751AF34DC7000FA0D2 /* test.mp3 */,
 				3D1DF8831AEF6CB10050CECF /* img003.jpg */,
 			);
 			name = Resourses;
@@ -440,9 +506,9 @@
 			files = (
 				3D5F34711AE21A320019103B /* Main.storyboard in Resources */,
 				3D1DF8841AEF6CB10050CECF /* img003.jpg in Resources */,
-				3D1DF87E1AEF64FD0050CECF /* TestViewController.xib in Resources */,
 				3D5F34761AE21A320019103B /* LaunchScreen.xib in Resources */,
 				3D1DF8721AEE3EDC0050CECF /* MainTableViewCell.xib in Resources */,
+				3D1679761AF34DC7000FA0D2 /* test.mp3 in Resources */,
 				3D5F34731AE21A320019103B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,13 +584,21 @@
 				3D1DF8711AEE3EDC0050CECF /* MainTableViewCell.m in Sources */,
 				3D1DF8651AEE209F0050CECF /* NSObject+JSONCategories.m in Sources */,
 				3D1DF86D1AEE30190050CECF /* MusicNetWork.m in Sources */,
+				3D0D6E521AF466FE00BCFB8D /* MusicDiscoverView.m in Sources */,
 				3D1DF8761AEF39660050CECF /* MusicDetailModel.m in Sources */,
-				3D1DF87D1AEF64FD0050CECF /* TestViewController.m in Sources */,
+				3D0D6E621AF5CC3100BCFB8D /* UIView+ViewControllerCategories.m in Sources */,
+				3D0D6E751AF6665F00BCFB8D /* MusicLocalModel.m in Sources */,
 				3D1DF85D1AEE18B60050CECF /* STModel.m in Sources */,
 				3D1DF8571AECBE120050CECF /* STPlayBarView.m in Sources */,
+				3D0D6E571AF508CB00BCFB8D /* STGlobalUtils.m in Sources */,
 				ABD439681AEE783E00A9AEA0 /* NCMusicEngine.m in Sources */,
+				3D0D6E651AF5CEF700BCFB8D /* MyFavoriteMusicViewController.m in Sources */,
 				3D1DF8791AEF62100050CECF /* STNavigationController.m in Sources */,
+				3D0D6E5A1AF512AB00BCFB8D /* MyMusicView.m in Sources */,
+				3DB6CEB41AF75248009505D7 /* FMDBManager.m in Sources */,
 				3D1DF8681AEE21DE0050CECF /* NSString+JSONCategories.m in Sources */,
+				3D0D6E681AF6644E00BCFB8D /* STLocalModel.m in Sources */,
+				3D0D6E5F1AF5C50600BCFB8D /* MyLocalMusicViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +729,28 @@
 				INFOPLIST_FILE = SongTaste/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"FMDB\"",
+					"-framework",
+					"\"FXBlurView\"",
+					"-framework",
+					"\"JSONModel\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"Ono\"",
+					"-framework",
+					"\"PureLayout\"",
+					"-framework",
+					"\"SDWebImage\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -668,6 +764,28 @@
 				INFOPLIST_FILE = SongTaste/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"FMDB\"",
+					"-framework",
+					"\"FXBlurView\"",
+					"-framework",
+					"\"JSONModel\"",
+					"-framework",
+					"\"MBProgressHUD\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"Ono\"",
+					"-framework",
+					"\"PureLayout\"",
+					"-framework",
+					"\"SDWebImage\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

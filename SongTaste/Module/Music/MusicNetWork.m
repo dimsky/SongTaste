@@ -57,13 +57,14 @@
 
 
 
-- (void)recommendMusicListWithCount:(int)count success:(void(^)(NSArray *result))successBlock failed:(void(^)(NSError *error))failedBlock {
-    NSDictionary *param = @{@"p": @"1", @"n": @(count), @"tmp": @"0.819292892893892", @"callback": @" "};
+- (void)recommendMusicListWithCount:(int)count page:(int)page success:(void(^)(NSArray *result))successBlock failed:(void(^)(NSError *error))failedBlock {
+    NSDictionary *param = @{@"p": @(page), @"n": @(count), @"tmp": @"0.819292892893892", @"callback": @" "};
     AFHTTPRequestOperationManager *manager =  [AFHTTPRequestOperationManager manager];
 //        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [manager GET:@"http://songtaste.com/api/android/rec_list.php" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSMutableArray *array = [NSMutableArray new];
+//        NSLog(@"%@",responseObject[@"data"]);
         for (id obj in responseObject[@"data"]) {
             MusicModel *musicModel = [[MusicModel alloc] initWithString:[obj JSONString] error:nil] ;
             [array addObject:musicModel];
@@ -84,24 +85,16 @@
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 //    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [manager GET:@"http://songtaste.com/api/android/songurl.php" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
-
+        NSLog(@"%@", operation.responseString);
         ONOXMLDocument *document = [ONOXMLDocument XMLDocumentWithData:responseObject error:nil];
         NSString *jsonStr = @"{";
         for (ONOXMLElement *element in document.rootElement.children) {
             jsonStr = [jsonStr stringByAppendingFormat:@"\"%@\": \"%@\", ", element.tag, element.stringValue];
-            
         }
         jsonStr = [jsonStr stringByAppendingString:@"}"];
-        NSLog(@"%@",jsonStr);
+        NSLog(@" 歌曲详细信息%@",jsonStr);
         NSError *error = nil;
         MusicDetailModel *musicDetailModel = [[MusicDetailModel alloc] initWithString:jsonStr error:&error];
-        
-//        for (id obj in responseObject[@"data"]) {
-//            MusicModel *musicModel = [[MusicModel alloc] initWithString:[obj JSONString] error:nil] ;
-//            [array addObject:musicModel];
-//        }
-//        
-//        successBlock(array);
         successBlock(musicDetailModel);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

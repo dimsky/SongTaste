@@ -59,7 +59,8 @@
     if (setBGPlay) {
         //后台播放
         [[AVAudioSession sharedInstance] setActive: YES error: nil];
-        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+        NSError *error = nil;
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&error];
         [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     }
     
@@ -83,6 +84,7 @@
 
 - (void)playUrl:(NSURL *)url withCacheKey:(NSString *)cacheKey {
     //
+    _fileSize = 0;
     self.downloadState = NCMusicEngineDownloadStateNotDownloaded;
     self.playState = NCMusicEnginePlayStateStopped;
     if (self.player) {
@@ -121,6 +123,9 @@
               bytesRead, totalBytesRead, totalBytesExpected, totalBytesReadForFile, totalBytesExpectedToReadForFile);
 #endif
         //
+        if (weakSelf.fileSize == 0) {
+            weakSelf.fileSize = totalBytesExpectedToReadForFile;
+        }
         if (weakSelf.delegate &&
             [weakSelf.delegate conformsToProtocol:@protocol(NCMusicEngineDelegate)] &&
             [weakSelf.delegate respondsToSelector:@selector(engine:downloadProgress:)]) {
@@ -246,9 +251,81 @@
     }
     
     //
-    if (playerDuration - playerCurrentTime < kNCMusicEnginePauseMargin && self.downloadState != NCMusicEngineDownloadStateDownloaded) {
+    if (playerDuration - playerCurrentTime < kNCMusicEnginePauseMargin && self.downloadState != NCMusicEngineDownloadStateDownloaded && self.downloadState != NCMusicEngineDownloadStateError) {
         [self pause];
         _pausedByUser = NO;
+    }
+}
+
+
+- (void)playLocalMusicWithName:(NSString *)name {
+    if (self.player) {
+        [self.player stop];
+        self.player = nil;
+    }
+    
+    if (!self.player) {
+        NSString *localFilePath = [[[self class] cacheFolder] stringByAppendingPathComponent:name];
+        NSURL *musicUrl = [[NSURL alloc] initFileURLWithPath:localFilePath isDirectory:NO];
+        NSError *error = nil;
+        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:musicUrl error:&error];
+        self.player.delegate = self;
+        if (error) {
+#ifdef DDLogError
+            DDLogError(@"[NCMusicEngine] AVAudioPlayer initial error: %@", error);
+#else
+            NSLog(@"[NCMusicEngine] AVAudioPlayer initial error: %@", error);
+#endif
+            self.error = error;
+            self.playState = NCMusicEnginePlayStateError;
+        }
+    }
+    //
+ 
+    if (self.player) {
+        if (!self.player.isPlaying) {
+            //
+            if ([self.player prepareToPlay]) NSLog(@"prepareToPlay");
+            if ([self.player play]) NSLog(@"play");
+            
+            //
+            self.playState = NCMusicEnginePlayStatePlaying;
+            
+            //
+            [self startPlayCheckingTimer];
+        }
+    }
+}
+- (void)playLocalFileWithPath:(NSString *)path {
+    //
+    if (!self.player) {
+        NSURL *musicUrl = [[NSURL alloc] initFileURLWithPath:path isDirectory:NO];
+        NSError *error = nil;
+        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:musicUrl error:&error];
+        self.player.delegate = self;
+        if (error) {
+#ifdef DDLogError
+            DDLogError(@"[NCMusicEngine] AVAudioPlayer initial error: %@", error);
+#else
+            NSLog(@"[NCMusicEngine] AVAudioPlayer initial error: %@", error);
+#endif
+            self.error = error;
+            self.playState = NCMusicEnginePlayStateError;
+        }
+    }
+    //
+    if (self.player) {
+        if (!self.player.isPlaying) {
+            //
+            if ([self.player prepareToPlay]) NSLog(@"prepareToPlay");
+            if ([self.player play]) NSLog(@"play");
+            
+            //
+            self.playState = NCMusicEnginePlayStatePlaying;
+            
+            //
+            [self startPlayCheckingTimer];
+        }
     }
 }
 
@@ -357,6 +434,27 @@
             [self.delegate engine:self playProgress:1.f];
         }
     }
+}
+
+
+- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
+    NSLog(@"audioplayerDecodeError");
+}
+
+
+
+- (void)audioPlayerBeginInterruption:(AVAudioPlayer *)player
+{
+    // 会自动暂停  do nothing ...
+    NSLog(@"audioPlayerBeginInterruption---被打断");
+}
+
+//  音乐播放器打断终止 (如结束 打、接电话)
+- (void)audioPlayerEndInterruption:(AVAudioPlayer *)player withOptions:(NSUInteger)flags
+{
+    // 手动恢复播放
+    [player play];
+    NSLog(@"audioPlayerEndInterruption---打断终止");
 }
 
 

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-SongTaste-FXBlurView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SongTaste-JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>06ED0BC60084294611AB59DA</key>
+		<key>11CB3BECF1636448F8177C4C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>159225DB8E5CDAA38B2DAEEC</key>
+		<key>1D8144AE9899DF4C5C95E535</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>227CAB9E4D3C3EF31FFF8D2C</key>
+		<key>23CCAF1400971264B78365B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2C1A300F890A17C2A4C10F2F</key>
+		<key>283C6AB62E8F3D0BE25109F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B05933A747AD2264FAFF9EF8</key>
+		<key>331CF10AA213C5385C74EB46</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E1CBDCF66C4C34B7AC2913BE</key>
+		<key>35ED02CA25EF0981EFAF8DCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2813869E5FE6D755DA47B9B</key>
+		<key>6E52BA5A764DAE3CCCB3F800</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F4DE1E578F8CC0B07B764F44</key>
+		<key>828CE8E9B36E04A98A135EBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FB3E4E7618AD8C7A21784147</key>
+		<key>BD1FCB2F84F61CAEAC90FB6B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E138D525B725473E725BCE8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

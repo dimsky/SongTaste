@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define MUSICARRAY_CHANGE_NOTIFICATION @"musicArrayChangeNotification"
+
 @class STPlayBarView;
 @interface STNavigationController : UINavigationController
 

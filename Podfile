@@ -10,5 +10,6 @@ target 'SongTaste' do
   pod "MJRefresh"
   pod "Ono"
   pod "MBProgressHUD"
+  pod "FXBlurView"
 end
 

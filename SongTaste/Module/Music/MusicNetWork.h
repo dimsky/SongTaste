@@ -18,7 +18,7 @@
 
 
 ///获取推荐音乐列表
-- (void)recommendMusicListWithCount:(int)count success:(void(^)(NSArray *result))successBlock failed:(void(^)(NSError *error))failedBlock;
+- (void)recommendMusicListWithCount:(int)count page:(int)page success:(void(^)(NSArray *result))successBlock failed:(void(^)(NSError *error))failedBlock;
 
 
 - (void)musicDetailWithId:(int)musicId success:(void(^)(MusicDetailModel *music))successBlock failed:(void(^)(NSError *error))failedBlock;
