@@ -35,11 +35,10 @@ static NSString *get_music_url = @"http://songtaste.com/api/android/rec_list.php
 @property (nonatomic, strong)UIScrollView *mainScrollView;
 
 // 发现音乐
-@property (nonatomic, strong)UIView *musicDiscoverMainView;
 @property (nonatomic, strong)UIImageView *backgroundImageView;
 @property (nonatomic, strong)FXBlurView *headerView;
-@property (nonatomic, strong)UITableView *mainTableView;
-
+@property (nonatomic, strong)UIButton *musicDiscoverBtn;
+@property (nonatomic, strong)UIButton *myMusicBtn;
 
 
 //我的ST
@@ -51,7 +50,9 @@ static NSString *get_music_url = @"http://songtaste.com/api/android/rec_list.php
 @property (nonatomic, strong)NCMusicEngine *musicEngine;
 @end
 
-@implementation MainViewController
+@implementation MainViewController {
+    CGFloat _statusBarOffset;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -87,30 +88,40 @@ static NSString *get_music_url = @"http://songtaste.com/api/android/rec_list.php
     
     _headerView = [FXBlurView newAutoLayoutView];
 //    _headerView.alpha = 0.8;
+    _headerView.tintColor = [UIColor orangeColor];
     [self.view addSubview:_headerView];
     
     [_headerView autoPinEdgeToSuperviewEdge:ALEdgeTop];
     [_headerView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [_headerView autoSetDimensionsToSize:CGSizeMake(SCREEN_WIDTH, MainViewControllerHeaderHeight)];
     
-    UILabel *leftLabel = [UILabel newAutoLayoutView];
-    leftLabel.textAlignment = NSTextAlignmentCenter;
-    leftLabel.text = @"发现音乐";
-
-    [_headerView addSubview:leftLabel];
-    [leftLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [leftLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
-    [leftLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-    [leftLabel autoSetDimension:ALDimensionWidth toSize:SCREEN_WIDTH/2 - 1];
     
-    UILabel *rightLabel = [UILabel newAutoLayoutView];
-    rightLabel.textAlignment = NSTextAlignmentCenter;
-    rightLabel.text = @"我的ST";
-    [_headerView addSubview:rightLabel];
-    [rightLabel autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [rightLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
-    [rightLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-    [rightLabel autoSetDimension:ALDimensionWidth toSize:SCREEN_WIDTH/2 - 1];
+    _musicDiscoverBtn = [UIButton newAutoLayoutView];
+    _musicDiscoverBtn.tag = 0;
+    [_musicDiscoverBtn setTitle:@"发现音乐" forState:UIControlStateNormal];
+    [_musicDiscoverBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_musicDiscoverBtn addTarget:self action:@selector(viewIndexChange:) forControlEvents:UIControlEventTouchUpInside];
+//    UILabel *leftLabel = [UILabel newAutoLayoutView];
+//    leftLabel.textAlignment = NSTextAlignmentCenter;
+//    leftLabel.text = @"发现音乐";
+
+    [_headerView addSubview:_musicDiscoverBtn];
+    [_musicDiscoverBtn autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_musicDiscoverBtn autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
+    [_musicDiscoverBtn autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    [_musicDiscoverBtn autoSetDimension:ALDimensionWidth toSize:SCREEN_WIDTH/2 - 1];
+    
+    
+    _myMusicBtn = [UIButton newAutoLayoutView];
+    _myMusicBtn.tag = 1;
+    [_myMusicBtn addTarget:self action:@selector(viewIndexChange:) forControlEvents:UIControlEventTouchUpInside];
+    [_myMusicBtn setTitle:@"我的ST" forState:UIControlStateNormal];
+    [_myMusicBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_headerView addSubview:_myMusicBtn];
+    [_myMusicBtn autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [_myMusicBtn autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
+    [_myMusicBtn autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    [_myMusicBtn autoSetDimension:ALDimensionWidth toSize:SCREEN_WIDTH/2 - 1];
 
     
     _mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
@@ -118,6 +129,7 @@ static NSString *get_music_url = @"http://songtaste.com/api/android/rec_list.php
     _mainScrollView.delegate = self;
     _mainScrollView.showsHorizontalScrollIndicator = NO;
     _mainScrollView.pagingEnabled = YES;
+    _mainScrollView.scrollsToTop = NO;
     
     MusicDiscoverView *discoverView = [[MusicDiscoverView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     [_mainScrollView addSubview:discoverView];
@@ -134,6 +146,15 @@ static NSString *get_music_url = @"http://songtaste.com/api/android/rec_list.php
 }
 
 
+- (void)viewIndexChange:(UIButton *)sender {
+    if (sender.tag == 0) {
+        
+    } else if (sender.tag == 1) {
+        
+    } else {
+        
+    }
+}
 
 
 

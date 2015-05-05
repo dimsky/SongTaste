@@ -49,6 +49,7 @@
     
     _tableView = [[UITableView alloc] initWithFrame:self.bounds];
     _tableView.dataSource = self;
+    _tableView.scrollsToTop = NO;
     _tableView.delegate = self;
     [_tableView setContentInset:UIEdgeInsetsMake(MainViewControllerHeaderHeight, 0, MainViewControllerFooterHeight, 0)];
     [_tableView setScrollIndicatorInsets:UIEdgeInsetsMake(MainViewControllerHeaderHeight, 0, MainViewControllerFooterHeight, 0)];

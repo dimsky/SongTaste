@@ -17,7 +17,7 @@
 @class NCMusicEngine;
 @class MusicDetailModel;
 @class MusicModel;
-
+@class YDSlider;
 @interface STPlayBarView : UIView
 
 ///播放控制
@@ -33,6 +33,7 @@
 
 ///播放信息
 @property (nonatomic,strong) UIView *playInfoView;
+@property (nonatomic, strong) YDSlider *progressSlider;
 @property (nonatomic,strong) UIProgressView *playProgressView; //播放进度
 @property (nonatomic,strong) UIProgressView *downloadProgressView; //下载进度
 @property (nonatomic,strong) UILabel *playingCurrentTime; // 当前播放时间

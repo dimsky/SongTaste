@@ -17,7 +17,9 @@
 @property (nonatomic, strong) NSArray *localMusicArray;
 @end
 
-@implementation MyLocalMusicViewController
+@implementation MyLocalMusicViewController {
+    NSMutableArray *musicModelArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +31,16 @@
     _tableView.delegate = self;
     [self.view addSubview:_tableView];
     
-    _localMusicArray= [MusicLocalModel listAllObjects];
+    _localMusicArray = [MusicLocalModel listAllObjects];
+    
+    musicModelArray = [NSMutableArray new];
+    for (MusicLocalModel *model in _localMusicArray) {
+        MusicModel *music = [[MusicModel alloc] init];
+        music.ID = model.MusicId;
+        music.Name = model.Name;
+        
+        [musicModelArray addObject:music];
+    }
 //    NSFileManager *fileManager = [NSFileManager defaultManager];
 //    _localMusicArray = [fileManager contentsOfDirectoryAtPath:[NCMusicEngine cacheFolder ] error:nil];
     
@@ -74,13 +85,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    [STPlayBarView sharedInstance].musicArray =
-    NSMutableArray *array = [NSMutableArray new];
-    for (MusicLocalModel *model in _localMusicArray) {
-        MusicModel *music = [[MusicModel alloc] init];
-        music.ID = model.MusicId;
-        [array addObject:music];
+    if ([STPlayBarView sharedInstance].musicArray != musicModelArray) {
+        [STPlayBarView sharedInstance].musicArray = musicModelArray;
     }
-        [STPlayBarView sharedInstance].musicArray =  array;
+    
     [[STPlayBarView sharedInstance] playMusicWithIndex:indexPath.row];
 //    [[STPlayBarView sharedInstance].musicEngine playLocalFileWithPath:localFilePath];
 }

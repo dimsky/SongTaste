@@ -51,6 +51,9 @@
 
 - (void)initSubViews {
     _titleIcon = [UIImageView newAutoLayoutView];
+    _titleIcon.layer.masksToBounds =YES;
+    
+    _titleIcon.layer.cornerRadius =25;
     [self.contentView addSubview:_titleIcon];
     [_titleIcon autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10];
     [_titleIcon autoSetDimensionsToSize:CGSizeMake(50, 50)];

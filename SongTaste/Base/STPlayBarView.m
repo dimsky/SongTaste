@@ -16,9 +16,10 @@
 #import "AVFoundation/AVFoundation.h"
 #import "STGlobalUtils.h"
 #import "MusicLocalModel.h"
+#import "YDSlider.h"
 
 
-@interface STPlayBarView() <NCMusicEngineDelegate>
+@interface STPlayBarView() <NCMusicEngineDelegate, YDSliderDelegate>
 
 @end
 
@@ -63,22 +64,38 @@
     [_playInfoView autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [_playInfoView autoSetDimension:ALDimensionHeight toSize:20];
     
+    _progressSlider = [YDSlider newAutoLayoutView];
+    _progressSlider.minimumTrackTintColor = [UIColor orangeColor];
+    [_progressSlider setThumbImage:[UIImage imageNamed:@"player-progress-point"] forState:UIControlStateNormal];
+    [_progressSlider setThumbImage:[UIImage imageNamed:@"player-progress-point"]  forState:UIControlStateHighlighted];
+     [_progressSlider setMinimumTrackImage:[[UIImage imageNamed:@"player-progress-h"] resizableImageWithCapInsets:UIEdgeInsetsMake(4, 3, 5, 4) resizingMode:UIImageResizingModeStretch]];
+    
+    [_progressSlider setMiddleTrackImage:[[UIImage imageNamed:@"player-progress-loading"]resizableImageWithCapInsets:UIEdgeInsetsMake(4, 3, 5, 4) resizingMode:UIImageResizingModeStretch]];
+    [_progressSlider setMaximumTrackImage:[[UIImage imageNamed:@"player-progress"]resizableImageWithCapInsets:UIEdgeInsetsMake(4, 3, 5, 4) resizingMode:UIImageResizingModeStretch]];
+
+    [_playInfoView addSubview:_progressSlider];
+    
+    _progressSlider.delegate = self;
+    [_progressSlider autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_progressSlider autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [_progressSlider autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    [_progressSlider autoSetDimension:ALDimensionHeight toSize:6];
     
     _downloadProgressView = [UIProgressView newAutoLayoutView];
-    _downloadProgressView.tintColor = [UIColor greenColor];
-    [_playInfoView addSubview:_downloadProgressView];
-    [_downloadProgressView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [_downloadProgressView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [_downloadProgressView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-    [_downloadProgressView autoSetDimension:ALDimensionHeight toSize:3];
-    
+//    _downloadProgressView.tintColor = [UIColor greenColor];
+//    [_playInfoView addSubview:_downloadProgressView];
+//    [_downloadProgressView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+//    [_downloadProgressView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+//    [_downloadProgressView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+//    [_downloadProgressView autoSetDimension:ALDimensionHeight toSize:3];
+//    
     _playProgressView = [UIProgressView newAutoLayoutView];
-    _playProgressView.alpha = 0.6;
-    [_playInfoView addSubview:_playProgressView];
-    [_playProgressView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [_playProgressView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [_playProgressView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
-    [_playProgressView autoSetDimension:ALDimensionHeight toSize:3];
+//    _playProgressView.alpha = 0.6;
+//    [_playInfoView addSubview:_playProgressView];
+//    [_playProgressView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+//    [_playProgressView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+//    [_playProgressView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+//    [_playProgressView autoSetDimension:ALDimensionHeight toSize:3];
     
     _playingCurrentTime = [UILabel newAutoLayoutView];
     _playingCurrentTime.font = [UIFont systemFontOfSize:8];
@@ -86,7 +103,7 @@
     [_playingCurrentTime autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [_playingCurrentTime autoPinEdgeToSuperviewEdge:ALEdgeTop];
     [_playingCurrentTime autoSetDimension:ALDimensionWidth toSize:30];
-    [_playingCurrentTime autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_playProgressView];
+    [_playingCurrentTime autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_progressSlider];
     
     _playingDuration = [UILabel newAutoLayoutView];
     _playingDuration.font = [UIFont systemFontOfSize:8];
@@ -95,7 +112,7 @@
     [_playingDuration autoPinEdgeToSuperviewEdge:ALEdgeRight];
     [_playingDuration autoPinEdgeToSuperviewEdge:ALEdgeTop];
     [_playingDuration autoSetDimension:ALDimensionWidth toSize:30];
-    [_playingDuration autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_playProgressView];
+    [_playingDuration autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_progressSlider];
     
     _playInfoLabel = [UILabel newAutoLayoutView];
     _playInfoLabel.textAlignment = NSTextAlignmentCenter;
@@ -104,7 +121,7 @@
     [_playInfoLabel autoPinEdgeToSuperviewEdge:ALEdgeTop];
     [_playInfoLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:30];
     [_playInfoLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:30];
-    [_playInfoLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_playProgressView];
+    [_playInfoLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_progressSlider];
     
     _playControlView = [UIView newAutoLayoutView];
     [self addSubview:_playControlView];
@@ -407,17 +424,19 @@
 }
 - (void)engine:(NCMusicEngine *)engine downloadProgress:(CGFloat)progress{
     if (!isLocal) {
-        _downloadProgressView.progress = progress;
+//        _downloadProgressView.progress = progress;
+        _progressSlider.middleValue = progress;
     }
     
 }
 
 - (void)engine:(NCMusicEngine *)engine playProgress:(CGFloat)progress{
-    _playProgressView.progress = progress;
+//    _playProgressView.progress = progress;
     
     _playingCurrentTime.text =  [STGlobalUtils timeFormatted: engine.player.currentTime];
     _playingDuration.text = [STGlobalUtils timeFormatted:engine.player.duration];
-    
+    _progressSlider.value = engine.player.currentTime;
+    _progressSlider.maximumValue = engine.player.duration;
     
     if (progress == 1.0) {
         
@@ -447,6 +466,21 @@
             
         }
     }
+}
+
+
+-(void)sliderChanging:(YDSlider *)slider {
+    if ([self.musicEngine.player isPlaying]) {
+        [self.musicEngine pause];
+    }
+    _playingCurrentTime.text =  [STGlobalUtils timeFormatted: slider.value];
+}
+
+-(void)sliderChanged:(YDSlider *)slider {
+        NSLog(@"changed");
+    [self.musicEngine.player setCurrentTime:slider.value];
+    [self.musicEngine resume];
+   
 }
 
 

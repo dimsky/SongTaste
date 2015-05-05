@@ -65,6 +65,7 @@ static int loadMorePage = 2;
     _mainTableView.alpha = 0.9;
     _mainTableView.dataSource = self;
     _mainTableView.delegate = self;
+    _mainTableView.scrollsToTop = YES;
     [_mainTableView setContentInset:UIEdgeInsetsMake(MainViewControllerHeaderHeight, 0, MainViewControllerFooterHeight, 0)];
     [_mainTableView setScrollIndicatorInsets:UIEdgeInsetsMake(MainViewControllerHeaderHeight, 0, MainViewControllerFooterHeight, 0)];
     

@@ -251,7 +251,8 @@
     }
     
     //
-    if (playerDuration - playerCurrentTime < kNCMusicEnginePauseMargin && self.downloadState != NCMusicEngineDownloadStateDownloaded && self.downloadState != NCMusicEngineDownloadStateError) {
+    if (playerDuration - playerCurrentTime < kNCMusicEnginePauseMargin && self.downloadState != NCMusicEngineDownloadStateDownloaded) {
+//    if ( self.downloadState != NCMusicEngineDownloadStateDownloaded){
         [self pause];
         _pausedByUser = NO;
     }
@@ -259,6 +260,8 @@
 
 
 - (void)playLocalMusicWithName:(NSString *)name {
+    self.downloadState = NCMusicEngineDownloadStateDownloaded;
+    
     if (self.player) {
         [self.player stop];
         self.player = nil;
