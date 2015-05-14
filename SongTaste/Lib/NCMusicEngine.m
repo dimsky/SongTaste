@@ -64,6 +64,8 @@
         [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     }
     
+    AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, audioRouteChangeListenerCallback, CFBridgingRetain(self));
+    
     //
     [[NSNotificationCenter defaultCenter] addObserverForName:AFNetworkingOperationDidStartNotification
                                                       object:nil
@@ -72,6 +74,36 @@
                                                       NSLog(@"Operation Started: %@", [note object]);
                                                   }];
     return self;
+}
+
+
+
+void audioRouteChangeListenerCallback (void *inUserData, AudioSessionPropertyID inPropertyID, UInt32 inPropertyValueSize,const void *inPropertyValue ) {
+    // ensure that this callback was invoked for a route change
+    if (inPropertyID != kAudioSessionProperty_AudioRouteChange) return;
+    
+    
+    {
+        // Determines the reason for the route change, to ensure that it is not
+        //      because of a category change.
+        CFDictionaryRef routeChangeDictionary = (CFDictionaryRef)inPropertyValue;
+        
+        CFNumberRef routeChangeReasonRef = (CFNumberRef)CFDictionaryGetValue (routeChangeDictionary, CFSTR (kAudioSession_AudioRouteChangeKey_Reason) );
+        SInt32 routeChangeReason;
+        CFNumberGetValue (routeChangeReasonRef, kCFNumberSInt32Type, &routeChangeReason);
+        NCMusicEngine *_self = (__bridge  NCMusicEngine *)inUserData;
+        if (routeChangeReason == kAudioSessionRouteChangeReason_OldDeviceUnavailable) {
+            //无耳机
+            [_self pause];
+        } else if (routeChangeReason == kAudioSessionRouteChangeReason_NewDeviceAvailable) {
+            // 有耳机
+            if (_self.playState == NCMusicEnginePlayStatePaused) {
+                [_self resume];
+            }
+
+        }
+        
+    }
 }
 
 #pragma mark -

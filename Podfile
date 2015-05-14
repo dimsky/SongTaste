@@ -1,4 +1,4 @@
-platform :ios, '6.1'
+platform :ios, '7.0'
 use_frameworks!
 
 target 'SongTaste' do
@@ -9,7 +9,9 @@ target 'SongTaste' do
   pod "JSONModel"
   pod "MJRefresh"
   pod "Ono"
-  pod "MBProgressHUD"
+#  pod "MBProgressHUD"
+  pod "SVProgressHUD"
   pod "FXBlurView"
+  pod "DZNSegmentedControl"
 end
 

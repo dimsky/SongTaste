@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "__54-[MyNetWork loginWithUserName:password:success:error:]_block_invoke_2:MyNetWork.m">
+      </ContextState>
+      <ContextState
+         contextName = "__54-[MyNetWork loginWithUserName:password:success:error:]_block_invoke:MyNetWork.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "operation">
+            </PersistentString>
+            <PersistentString
+               value = "operation.response.allHeaderFields">
+            </PersistentString>
+            <PersistentString
+               value = " [operation.response.allHeaderFields valueForKey:@&quot;Set-Cookie&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "responseObject[@&quot;ecode&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

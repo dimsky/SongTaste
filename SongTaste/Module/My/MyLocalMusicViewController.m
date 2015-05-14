@@ -30,6 +30,8 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [self.view addSubview:_tableView];
+    [_tableView setScrollIndicatorInsets:UIEdgeInsetsMake(0, 0, 60, 0)];
+    [_tableView setContentInset:UIEdgeInsetsMake(0, 0, 60, 0)];
     
     _localMusicArray = [MusicLocalModel listAllObjects];
     
@@ -38,6 +40,7 @@
         MusicModel *music = [[MusicModel alloc] init];
         music.ID = model.MusicId;
         music.Name = model.Name;
+        
         
         [musicModelArray addObject:music];
     }

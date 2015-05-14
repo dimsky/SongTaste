@@ -62,7 +62,7 @@ static int loadMorePage = 2;
     
     
     _mainTableView = [UITableView newAutoLayoutView];
-    _mainTableView.alpha = 0.9;
+    _mainTableView.alpha = 1;
     _mainTableView.dataSource = self;
     _mainTableView.delegate = self;
     _mainTableView.scrollsToTop = YES;

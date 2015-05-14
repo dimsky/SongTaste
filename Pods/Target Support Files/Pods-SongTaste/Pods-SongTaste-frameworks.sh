@@ -49,23 +49,25 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'AFNetworking.framework'
+  install_framework 'DZNSegmentedControl.framework'
   install_framework 'FMDB.framework'
   install_framework 'FXBlurView.framework'
   install_framework 'JSONModel.framework'
-  install_framework 'MBProgressHUD.framework'
   install_framework 'MJRefresh.framework'
   install_framework 'Ono.framework'
   install_framework 'PureLayout.framework'
   install_framework 'SDWebImage.framework'
+  install_framework 'SVProgressHUD.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'AFNetworking.framework'
+  install_framework 'DZNSegmentedControl.framework'
   install_framework 'FMDB.framework'
   install_framework 'FXBlurView.framework'
   install_framework 'JSONModel.framework'
-  install_framework 'MBProgressHUD.framework'
   install_framework 'MJRefresh.framework'
   install_framework 'Ono.framework'
   install_framework 'PureLayout.framework'
   install_framework 'SDWebImage.framework'
+  install_framework 'SVProgressHUD.framework'
 fi

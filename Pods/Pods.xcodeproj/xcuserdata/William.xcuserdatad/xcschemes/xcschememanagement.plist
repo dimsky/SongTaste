@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-SongTaste-DZNSegmentedControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SongTaste-FMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -20,11 +25,6 @@
 			<false/>
 		</dict>
 		<key>Pods-SongTaste-JSONModel.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-SongTaste-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -49,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-SongTaste-SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SongTaste.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,52 +62,57 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>11CB3BECF1636448F8177C4C</key>
+		<key>1F0C3131CA43E740D6271CDC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1D8144AE9899DF4C5C95E535</key>
+		<key>295AC157D97F7E132FE8DF12</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>23CCAF1400971264B78365B1</key>
+		<key>3CD294EA4C7554A11EA0B301</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>283C6AB62E8F3D0BE25109F0</key>
+		<key>459542D8CB999F4C2F76AD99</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>331CF10AA213C5385C74EB46</key>
+		<key>4DBB7B727B432F580CECA86E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>35ED02CA25EF0981EFAF8DCB</key>
+		<key>89AD74DAAC16491A8A069149</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6E52BA5A764DAE3CCCB3F800</key>
+		<key>8A279EB135529DECDD85EC70</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>828CE8E9B36E04A98A135EBC</key>
+		<key>9FAB4CFE75530B482CD5A3D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD1FCB2F84F61CAEAC90FB6B</key>
+		<key>A9E4D5CBE32DA8CEB565F170</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E138D525B725473E725BCE8F</key>
+		<key>C379D27E6EB42F22F91F7392</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D2FACED5384DA43231F895A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

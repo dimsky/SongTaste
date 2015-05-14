@@ -60,8 +60,8 @@
     [_playInfoView setBackgroundColor:[UIColor whiteColor]];
     
     [_playInfoView autoPinEdgeToSuperviewEdge:ALEdgeTop];
-    [_playInfoView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [_playInfoView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [_playInfoView autoPinEdgeToSuperviewEdge:ALEdgeLeft ];
+    [_playInfoView autoPinEdgeToSuperviewEdge:ALEdgeRight ];
     [_playInfoView autoSetDimension:ALDimensionHeight toSize:20];
     
     _progressSlider = [YDSlider newAutoLayoutView];
@@ -76,8 +76,8 @@
     [_playInfoView addSubview:_progressSlider];
     
     _progressSlider.delegate = self;
-    [_progressSlider autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [_progressSlider autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [_progressSlider autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:40];
+    [_progressSlider autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:40];
     [_progressSlider autoPinEdgeToSuperviewEdge:ALEdgeBottom];
     [_progressSlider autoSetDimension:ALDimensionHeight toSize:6];
     
@@ -101,18 +101,19 @@
     _playingCurrentTime.font = [UIFont systemFontOfSize:8];
     [_playInfoView addSubview:_playingCurrentTime];
     [_playingCurrentTime autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-    [_playingCurrentTime autoPinEdgeToSuperviewEdge:ALEdgeTop];
-    [_playingCurrentTime autoSetDimension:ALDimensionWidth toSize:30];
-    [_playingCurrentTime autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_progressSlider];
+    [_playingCurrentTime autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+
+
+    [_playingCurrentTime autoSetDimensionsToSize:CGSizeMake(40, 10)];
+//    [_playingCurrentTime autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_progressSlider];
     
     _playingDuration = [UILabel newAutoLayoutView];
     _playingDuration.font = [UIFont systemFontOfSize:8];
     _playingDuration.textAlignment = NSTextAlignmentRight;
     [_playInfoView addSubview:_playingDuration];
     [_playingDuration autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [_playingDuration autoPinEdgeToSuperviewEdge:ALEdgeTop];
-    [_playingDuration autoSetDimension:ALDimensionWidth toSize:30];
-    [_playingDuration autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:_progressSlider];
+    [_playingDuration autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    [_playingDuration autoSetDimensionsToSize:CGSizeMake(40, 10)];
     
     _playInfoLabel = [UILabel newAutoLayoutView];
     _playInfoLabel.textAlignment = NSTextAlignmentCenter;
@@ -254,6 +255,7 @@
 }
 
 
+/// 播放
 - (void)playMusicWithIndex:(NSInteger)index{
     _playingIndex = index;
     if (self.musicArray.count > 0) {
@@ -269,6 +271,7 @@
             MusicLocalModel *localModel = array[0];
             [self playMusicWithLocalName:localModel.localFileName];
             _downloadProgressView.progress = 1;
+            _progressSlider.middleValue = 1;
         } else {
             __weak typeof(self) weakSelf = self;
             [[MusicNetWork sharedInstance] musicDetailWithId:_playingMusicInfo.ID success:^(MusicDetailModel *musicDetail) {
@@ -280,7 +283,8 @@
                 
             }];
         }
-       
+        _playInfoLabel.text = self.playingMusicInfo.Name;
+//        _playInfoLabel.text = self.playingMusicDetailInfo.song_name;
         
     } else {
         
@@ -335,7 +339,7 @@
         dict = [[NSMutableDictionary alloc] init];
     }
     
-    [dict setObject:_playingMusicDetailInfo.song_name forKey:MPMediaItemPropertyTitle];
+    [dict setObject:_playingMusicInfo.Name forKey:MPMediaItemPropertyTitle];
     [dict setObject:_playingMusicDetailInfo.singer_name  forKey:MPMediaItemPropertyArtist];
     [dict setObject:[NSNumber numberWithDouble:self.musicEngine.player.currentTime] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
     if (self.musicEngine.playState == NCMusicEnginePlayStatePlaying) {
@@ -353,7 +357,7 @@
 
 - (void)engine:(NCMusicEngine *)engine didChangePlayState:(NCMusicEnginePlayState)playState {
     [self updateControlNowPlayingInfo];
-    _playInfoLabel.text = self.playingMusicDetailInfo.song_name;
+
     switch (engine.playState) {
         case NCMusicEnginePlayStatePlaying:
             NSLog(@"开始播放");

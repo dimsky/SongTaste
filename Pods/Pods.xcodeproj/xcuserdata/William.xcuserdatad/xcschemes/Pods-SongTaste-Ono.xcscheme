@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "11CB3BECF1636448F8177C4C"
+               BlueprintIdentifier = "1F0C3131CA43E740D6271CDC"
                BuildableName = "Ono.framework"
                BlueprintName = "Pods-SongTaste-Ono"
                ReferencedContainer = "container:Pods.xcodeproj">

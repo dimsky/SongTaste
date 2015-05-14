@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static const int stCellEdgeLeft = 10;
+
 @interface MyMusicView : UIView
 
 

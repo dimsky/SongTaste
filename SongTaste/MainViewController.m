@@ -148,9 +148,12 @@ static NSString *get_music_url = @"http://songtaste.com/api/android/rec_list.php
 
 - (void)viewIndexChange:(UIButton *)sender {
     if (sender.tag == 0) {
-        
+        [_mainScrollView scrollRectToVisible:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) animated:NO];
+        [_musicDiscoverBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     } else if (sender.tag == 1) {
-        
+        [_mainScrollView scrollRectToVisible:CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT)animated:NO];
+        [_myMusicBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+
     } else {
         
     }

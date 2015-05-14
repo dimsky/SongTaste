@@ -37,8 +37,12 @@
 		3D5F34761AE21A320019103B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D5F34741AE21A320019103B /* LaunchScreen.xib */; };
 		3D5F34821AE21A320019103B /* SongTasteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F34811AE21A320019103B /* SongTasteTests.m */; };
 		3D5F348C1AE228D60019103B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5F348B1AE228D60019103B /* AVFoundation.framework */; };
+		3D9071571AFB7F3A00C24872 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9071561AFB7F3A00C24872 /* LoginViewController.m */; };
+		3D90715B1AFC678A00C24872 /* MyNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90715A1AFC678A00C24872 /* MyNetWork.m */; };
+		3D90715F1AFC8ED100C24872 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D90715E1AFC8ED100C24872 /* UserModel.m */; };
 		3D93F24A1AF8748000ED1BBA /* YDSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D93F2491AF8748000ED1BBA /* YDSlider.m */; };
 		3DB6CEB41AF75248009505D7 /* FMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6CEB31AF75248009505D7 /* FMDBManager.m */; };
+		3DC8179C1B04A51C00571610 /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8179B1B04A51C00571610 /* NSObject+Property.m */; };
 		ABD439681AEE783E00A9AEA0 /* NCMusicEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD439671AEE783E00A9AEA0 /* NCMusicEngine.m */; };
 		ABD4396B1AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD4396A1AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.m */; };
 		ABD4396D1AEE8C8200A9AEA0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD4396C1AEE8C8200A9AEA0 /* libxml2.dylib */; };
@@ -112,10 +116,18 @@
 		3D5F34801AE21A320019103B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D5F34811AE21A320019103B /* SongTasteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongTasteTests.m; sourceTree = "<group>"; };
 		3D5F348B1AE228D60019103B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3D9071551AFB7F3A00C24872 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		3D9071561AFB7F3A00C24872 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		3D9071591AFC678A00C24872 /* MyNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNetWork.h; sourceTree = "<group>"; };
+		3D90715A1AFC678A00C24872 /* MyNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNetWork.m; sourceTree = "<group>"; };
+		3D90715D1AFC8ED100C24872 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		3D90715E1AFC8ED100C24872 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		3D93F2481AF8748000ED1BBA /* YDSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDSlider.h; sourceTree = "<group>"; };
 		3D93F2491AF8748000ED1BBA /* YDSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDSlider.m; sourceTree = "<group>"; };
 		3DB6CEB21AF75248009505D7 /* FMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBManager.h; sourceTree = "<group>"; };
 		3DB6CEB31AF75248009505D7 /* FMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBManager.m; sourceTree = "<group>"; };
+		3DC8179A1B04A51C00571610 /* NSObject+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Property.h"; sourceTree = "<group>"; };
+		3DC8179B1B04A51C00571610 /* NSObject+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Property.m"; sourceTree = "<group>"; };
 		75A6A71D88EB63C97B721744 /* Pods-SongTaste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongTaste.release.xcconfig"; path = "Pods/Target Support Files/Pods-SongTaste/Pods-SongTaste.release.xcconfig"; sourceTree = "<group>"; };
 		ABD439661AEE783E00A9AEA0 /* NCMusicEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCMusicEngine.h; sourceTree = "<group>"; };
 		ABD439671AEE783E00A9AEA0 /* NCMusicEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCMusicEngine.m; sourceTree = "<group>"; };
@@ -180,6 +192,8 @@
 				3D0D6E5E1AF5C50600BCFB8D /* MyLocalMusicViewController.m */,
 				3D0D6E631AF5CEF700BCFB8D /* MyFavoriteMusicViewController.h */,
 				3D0D6E641AF5CEF700BCFB8D /* MyFavoriteMusicViewController.m */,
+				3D9071551AFB7F3A00C24872 /* LoginViewController.h */,
+				3D9071561AFB7F3A00C24872 /* LoginViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -230,6 +244,7 @@
 		3D1DF84A1AECB19E0050CECF /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				3DC8179D1B04A55400571610 /* Support */,
 				3D0D6E541AF502D400BCFB8D /* Utils */,
 				3D1DF8621AEE204E0050CECF /* Categories */,
 				3D1DF8611AEE20420050CECF /* Model */,
@@ -256,7 +271,6 @@
 			children = (
 				3D1DF8511AECBAB50050CECF /* Music */,
 				3D1DF8521AECBAB50050CECF /* My */,
-				3D1DF8531AECBAB50050CECF /* setting */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -278,19 +292,14 @@
 		3D1DF8521AECBAB50050CECF /* My */ = {
 			isa = PBXGroup;
 			children = (
+				3D90715C1AFC8C0000C24872 /* Model */,
+				3D9071581AFC65F700C24872 /* NetWork */,
 				3D0D6E581AF512AB00BCFB8D /* MyMusicView.h */,
 				3D0D6E591AF512AB00BCFB8D /* MyMusicView.m */,
 				3D0D6E5C1AF5C4D700BCFB8D /* Controller */,
 				3D0D6E5B1AF5C4D100BCFB8D /* View */,
 			);
 			path = My;
-			sourceTree = "<group>";
-		};
-		3D1DF8531AECBAB50050CECF /* setting */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = setting;
 			sourceTree = "<group>";
 		};
 		3D1DF8541AECBDC10050CECF /* View */ = {
@@ -318,6 +327,8 @@
 		3D1DF8621AEE204E0050CECF /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				3DC8179A1B04A51C00571610 /* NSObject+Property.h */,
+				3DC8179B1B04A51C00571610 /* NSObject+Property.m */,
 				3D1DF8631AEE209F0050CECF /* NSObject+JSONCategories.h */,
 				3D1DF8641AEE209F0050CECF /* NSObject+JSONCategories.m */,
 				3D1DF8661AEE21DE0050CECF /* NSString+JSONCategories.h */,
@@ -402,6 +413,31 @@
 				3D5F34801AE21A320019103B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3D9071581AFC65F700C24872 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				3D9071591AFC678A00C24872 /* MyNetWork.h */,
+				3D90715A1AFC678A00C24872 /* MyNetWork.m */,
+			);
+			name = NetWork;
+			sourceTree = "<group>";
+		};
+		3D90715C1AFC8C0000C24872 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D90715D1AFC8ED100C24872 /* UserModel.h */,
+				3D90715E1AFC8ED100C24872 /* UserModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3DC8179D1B04A55400571610 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 		6DE4A9A00388E4613EB68464 /* Pods */ = {
@@ -582,10 +618,13 @@
 			files = (
 				ABD4396B1AEE7D8D00A9AEA0 /* AFDownloadRequestOperation.m in Sources */,
 				3D5F346E1AE21A320019103B /* MainViewController.m in Sources */,
+				3D90715F1AFC8ED100C24872 /* UserModel.m in Sources */,
+				3D9071571AFB7F3A00C24872 /* LoginViewController.m in Sources */,
 				3D1DF8601AEE1A3F0050CECF /* MusicModel.m in Sources */,
 				3D1DF8811AEF670C0050CECF /* STViewController.m in Sources */,
 				3D5F346B1AE21A320019103B /* AppDelegate.m in Sources */,
 				3D5F34681AE21A320019103B /* main.m in Sources */,
+				3D90715B1AFC678A00C24872 /* MyNetWork.m in Sources */,
 				3D1DF8711AEE3EDC0050CECF /* MainTableViewCell.m in Sources */,
 				3D1DF8651AEE209F0050CECF /* NSObject+JSONCategories.m in Sources */,
 				3D1DF86D1AEE30190050CECF /* MusicNetWork.m in Sources */,
@@ -598,6 +637,7 @@
 				3D1DF8571AECBE120050CECF /* STPlayBarView.m in Sources */,
 				3D0D6E571AF508CB00BCFB8D /* STGlobalUtils.m in Sources */,
 				ABD439681AEE783E00A9AEA0 /* NCMusicEngine.m in Sources */,
+				3DC8179C1B04A51C00571610 /* NSObject+Property.m in Sources */,
 				3D0D6E651AF5CEF700BCFB8D /* MyFavoriteMusicViewController.m in Sources */,
 				3D1DF8791AEF62100050CECF /* STNavigationController.m in Sources */,
 				3D0D6E5A1AF512AB00BCFB8D /* MyMusicView.m in Sources */,
@@ -682,7 +722,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -719,7 +759,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -734,7 +774,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "SongTaste/SongTaste-Prefix.pch";
 				INFOPLIST_FILE = SongTaste/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -770,7 +810,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "SongTaste/SongTaste-Prefix.pch";
 				INFOPLIST_FILE = SongTaste/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
